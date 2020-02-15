@@ -1,0 +1,129 @@
+<html>
+
+<head>
+	<title>Javascript orientation session!</title>
+	<link rel="stylesheet" href="../reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="../reveal.js/css/theme/moon.css">
+	<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+	<link rel="JavaScript" href="../reveal.js/plugin/markdown/marked.js">
+	<link rel="JavaScript" href="../reveal.js/plugin/markdown/markdown.js">
+	<style>
+		.reveal pre {
+			margin: 0;
+		}
+
+		.monospace {
+			font-family: monospace !important;
+		}
+
+		.illustration {
+			border: 0px
+		}
+
+		.reveal li {
+			margin-bottom: 0.5em;
+		}
+
+		.reveal pre {
+			width: 100%;
+		}
+
+		.reveal pre code {
+			cursor: pointer;
+		}
+
+		.reveal li pre {
+			width: fit-content;
+		}
+
+		.logo {
+			position: fixed;
+			/* Sit on top of the page content */
+			z-index: 2;
+			/* Specify a stack order in case you're using a different order for other elements */
+		}
+	</style>
+</head>
+
+<body>
+	<a href="https://www.redi-school.org/"><img src="../redi-school-logo.jpg" class="logo" /></a>
+	<div class="reveal">
+        <div class="slides">
+            <section>
+				<h1>Javascript orientation session</h1>
+				<h3>🚀 ReDI Spring 2020 🚀</h3>
+            </section>
+            <section>
+				<h2>Our team</h2>
+                <ul class="fragment">
+                    <li>Anna</li>
+                    <li>Carolyn</li>
+                    <li>Ivan</li>
+                    <li>Jeff</li>
+                    <li>Travis</li>
+                </ul>
+			</section>
+            <section>
+                <h2>Why Javascript?</h2>
+            </section>
+            <section>
+                <h3>Most Popular Technologies</h3>
+                <img src="./assets/languages_top.png" />
+            </section>
+            <section>
+                <h2>What we teach?</h2>
+                <ul>
+                    <li class="fragment">JS/HTML/CSS are always used together</li>
+                    <li class="fragment">How to build your own fully functional web-page</li>
+                    <li class="fragment">Collaboration with others on a project</li>
+                    <li class="fragment">Clean code principals</li>
+                    <li class="fragment">Confidence about what you are doing</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Reasons to join?</h2>
+                <ul>
+                    <li class="fragment">Perfect first step into your career in tech</li>
+                    <li class="fragment">Frontend Developers are in big demand in industry </li>
+                    <li class="fragment">You instantly see the result of your code</li>
+                </ul>
+            </section>
+            <section>
+                <h2>What can you expect afterwards?</h2>
+                <ul>
+                    <li class="fragment">Be familiar with basic programming principals</li>
+                    <li class="fragment">Possibility to join advanced class/course of Frontend Development</li>
+                    <li class="fragment">Most likely to fit for an Internship or a Trainee/Entry level Job</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Thank you!</h2>
+                <h1>Questions?</h1>
+                <h4>PS: these slides were created with JavaScript 🤩</h4>
+            </section>
+        </div>
+    </div>
+
+
+	<script src="../jquery-3.3.1.slim.min.js"></script>
+	<script src="../reveal.js/lib/js/head.min.js"></script>
+	<script src="../reveal.js/js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			history: true,
+			dependencies: [
+				{ src: '../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () { hljs.initHighlightingOnLoad(); } },
+			]
+		});
+
+		// Make each code example executable by clicking it:
+		$(document).ready(function () {
+			$('code').click(function (event) {
+				console.info('Click!', $(this).text());
+				eval($(this).text());
+			});
+		});
+	</script>
+</body>
+
+</html>
