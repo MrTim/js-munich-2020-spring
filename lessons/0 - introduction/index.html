@@ -1,0 +1,172 @@
+<html>
+
+<head>
+	<title>Javascript orientation session!</title>
+	<link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="../../reveal.js/css/theme/moon.css">
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+	<style>
+		.reveal pre {
+			margin: 0;
+		}
+
+		.monospace {
+			font-family: monospace !important;
+		}
+
+		.illustration {
+			border: 0px
+		}
+
+		.reveal li {
+			margin-bottom: 0.5em;
+		}
+
+		.reveal pre {
+			width: 100%;
+		}
+
+		.reveal pre code {
+			cursor: pointer;
+		}
+
+		.reveal li pre {
+			width: fit-content;
+		}
+
+		.logo {
+			position: fixed;
+			/* Sit on top of the page content */
+			z-index: 2;
+			/* Specify a stack order in case you're using a different order for other elements */
+		}
+	</style>
+</head>
+
+<body>
+	<a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+	<div class="reveal">
+        <div class="slides">
+            <section>
+				<h1>Frontend Development: JavaScript</h1>
+				<h3>🚀 ReDI Spring 2020 🚀</h3>
+			</section>
+			<section class="smaller">
+				<h3>Agenda:</h3>
+				<ol>
+					<li class="fragment">Rules and other serious stuff 🧐</li>
+					<li class="fragment">Logistics and info 💁‍♂️</li>
+					<li class="fragment">Set up your laptop 💻</li>
+					<li class="fragment">What will we cover? 📚</li>
+					<li class="fragment">Final project brain storming 🌪</li>
+				</ol>
+            </section>
+            <section>
+				<h1>Rules and other serious stuff</h1>
+			</section>
+			<section>
+				<h3>To get the certificate</h3>
+				<ul>
+					<li class="fragment">80% attendance</li>
+					<li class="fragment">80% homework attempt</li>
+					<li class="fragment">Midterm test</li>
+					<li class="fragment">Final project</li>
+				</ul>
+            </section>
+            <section>
+				<h3>Classroom rules</h3>
+				<ul>
+					<li class="fragment">Listen to the teacher</li>
+					<li class="fragment">Listen to each other</li>
+					<li class="fragment">Respect each other</li>
+					<li class="fragment">Bring the right equipment to class</li>
+				</ul>
+            </section>
+            <section>
+				<h3>Classroom rules</h3>
+				<ul>
+					<li>Tell us (or ReDI) on Slack if you're late or can't come</li>
+					<li class="fragment">Do the homework and review the last lesson before class</li>
+					<li class="fragment">Don't hesitate to ask us in person or on Slack!</li>
+					<li class="fragment">Enjoy and have fun</li>
+				</ul>
+            </section>
+            <section>
+				<h3>Logistics</h3>
+				<ul>
+					<li class="fragment"><b>Where?</b> ??? </li>
+					<li class="fragment"><b>When?</b> 19:00 - 21:00 Mondays and Thursdays</li>
+					<li class="fragment"><b>What do you need to bring?</b> Only your laptop</li>
+				</ul>
+            </section>
+            <section>
+				<h3>Let's set up your laptop</h3>
+				<ul class="fragment">
+					<li>Chrome: <a href="https://www.google.com/chrome/">https://www.google.com/chrome/</a></li>
+					<li>Slack: <a href="https://slack.com/downloads">https://slack.com/downloads</a></li>
+                    <li>VSCode: <a href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a></li>
+                    <li>Github: <a href="https://github.com/">https://github.com/</a> (➡ sign up for free)</li>
+                    <li>CodePen: <a href="https://codepen.io">https://codepen.io</a> ️(➡ sign up for free)</li>
+                    <li>Google classroom</li>
+				</ul>
+            </section>
+            <section>
+				<h3>What will we do?</h3>
+				<ul>
+					<li class="fragment">Learn and use JavaScript</li>
+					<li class="fragment">See advance HTML/CSS</li>
+					<li class="fragment">Create interactive web pages</li>
+					<li class="fragment">Have lot's of fun!</li>
+				</ul>
+            </section>
+            <section>
+				<h3>The Final Project</h3>
+				<ul>
+					<li class="fragment">Each of you has to finish a small project</li>
+					<li class="fragment">The projects will be presented on demo day to all from ReDI Munich and guests</li>
+					<li class="fragment">You have lots of freedom how to design and build it</li>
+					<li class="fragment">Start with small simple version and then add more features</li>
+					<li class="fragment">We will help you every step of the way!</li>
+				</ul>
+            </section>
+            <section>
+                <h3>What could be a Final Project</h3>
+                <ul>
+                    <li class="fragment">Your own idea</li>
+                    <li class="fragment">Pizza builder</li>
+                    <li class="fragment">Twitter clone</li>
+                    <li class="fragment">Calculator</li>
+                    <li class="fragment">...</li>
+                </ul>
+            </section>
+            <section>
+                <h1>Questions?</h1>
+            </section>
+        </div>
+    </div>
+
+
+	<script src="../../jquery-3.3.1.slim.min.js"></script>
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			history: true,
+			dependencies: [
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () { hljs.initHighlightingOnLoad(); } },
+			]
+		});
+
+		// Make each code example executable by clicking it:
+		$(document).ready(function () {
+			$('code').click(function (event) {
+				console.info('Click!', $(this).text());
+				eval($(this).text());
+			});
+		});
+	</script>
+</body>
+
+</html>
