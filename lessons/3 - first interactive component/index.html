@@ -53,6 +53,307 @@
 				<h1>Lecture</h1>
 				<h3>Interactive component</h3>
 			</section>
+			<section>
+				<h3>What we would cover?</h3>
+				<ul>
+					<li class="fragment">variables</li>
+					<li class="fragment">function</li>
+					<li class="fragment">html queries</li>
+					<li class="fragment">button with actions</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Demo</h3>
+				<button id="strangeButton">Strange button</button>
+				<style>
+					#strangeButton {
+						background-color: lightgreen;
+						margin: 0.5em;
+						padding: 0.5em 2em;
+						font-size: 20pt;
+						cursor: pointer;
+					}
+				</style>
+				<script>
+					let strangeButtonCmp = document.getElementById("strangeButton");
+
+					function clickHandler(event) {
+						console.log('Hey, you just pressed strange button');
+						alert('Heloooo');
+					}
+
+					strangeButtonCmp.addEventListener("click", clickHandler);
+				</script>
+			</section>
+			<section>
+				<h3>Variables</h3>
+				<ul>
+					<li class="fragment">are like <b>boxes</b> 📦</li>
+					<li class="fragment">you can <b>put stuff into</b> 📥</li>
+					<li class="fragment">and <b>retrieve it</b> later! 📤</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Syntax</h3>
+				<ul>
+					<li>
+						<b>Initialization:</b>
+						(nameOfVariable is chosen by <b>YOU</b>)
+						<pre><code>let nameOfVariable;</code></pre>
+					</li>
+					<li>
+						<b>Assignment:</b>
+						<pre><code>nameOfVariable = 5;</code></pre>
+						(you can put in any kind of value)
+					</li>
+					<li>
+						<b>Retrieve value:</b>
+						<pre><code>nameOfVariable</code></pre>
+						(write the variable name wherever you would write a value)
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Syntax</h3>
+				<ul>
+					<li>
+						<b>Initialization:</b>
+						(Definition and assignment in one line)
+						<pre><code>
+let nameOfVariable;
+nameOfVariable = 5;
+						</code></pre>
+
+						... is the same as
+						<pre><code>let nameOfVariable = 5;</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				Example:
+				<p>
+					<pre><code data-trim>
+						let name;
+						name = prompt("What's your name?");
+						alert("Hi " + name + "!");
+					</code></pre>
+				</p>
+				<p class="fragment">
+					<br>
+					Shorter:
+					<pre class="fragment"><code data-trim>
+						let name = prompt("What's your name?");
+						alert("Hi " + name + "!");
+					</code></pre>
+				</p>
+			</section>
+			<section>
+				<h3>What makes a good variable name?</h3>
+				<ul>
+					<li class="fragment">Is <code>xxx</code> a good variable name?</li>
+					<li class="fragment">Is <code>myVariable</code> a good variable name?</li>
+					<li class="fragment">Is <code>age</code> a good variable name?</li>
+					<li class="fragment">→ Name should describe what is stored in the variable!</li>
+					<li class="fragment">→ Otherwise code will be hard to read and understand</li>
+				</ul>
+			</section>
+			<section>
+				<ul>
+					<li>In JavaScipt, it is common to use <b>camelCase</b> 🐫</li>
+					<li class="fragment">"blog post title" becomes "blogPostTitle"</li>
+					<li class="fragment">"number of users" becomes ...?</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Functions</h3>
+			</section>
+			<section>
+				<pre><code>alert("Hello world!");</code></pre>
+				<br>
+				<br>
+				<ul>
+					<li class="fragment">What is "alert" here?</li>
+					<li class="fragment">It is a <b>function</b></li>
+					<li class="fragment">Functions are building blocks in JavaScipt</li>
+					<li class="fragment">You will use functions <b>all the time</b></li>
+					<li class="fragment"> A JavaScript function is a block of code designed to perform a particular task.</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Syntax</h3>
+				<ul>
+					<li>
+						<b>Definition:</b>
+						<pre><code data-trim>
+							function nameOfFunction() {
+								// body (your code)
+								// ...
+								// ...
+							}
+						</code></pre>
+						(nameOfFunction is choosen by <b>YOU</b>)
+					</li>
+
+					<li>
+						<b>Function call:</b>
+						<pre><code>nameOfFunction();</code></pre>
+						(can be used in any line in the code after the function was defined)
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>But why do we need it?</h3>
+			</section>
+			<section>
+				<ul>
+					<li>Let's say you want to ask the user about the weather from time to time 🌤</li>
+					<li class="fragment">
+						<pre><code data-trim>
+							let weather;
+							weather = prompt("How's the weather right now?");
+							alert("Oh, so it's " + weather + ", eh?");
+						</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<pre><code data-trim>
+					let weather1;
+					weather1 = prompt("How's the weather right now?");
+					alert("Oh, so it's " + weather1 + ", eh?");
+
+					...
+
+					let weather2;
+					weather2 = prompt("How's the weather right now?");
+					alert("Oh, so it's " + weather2 + ", eh?");
+
+					...
+
+					let weather3;
+					weather3 = prompt("How's the weather right now?");
+					alert("Oh, so it's " + weather3 + ", eh?");
+				</code></pre>
+				<p>Do we have to write that every time?</p>
+			</section>
+			<section>
+				<ul>
+					<li>Functions are blocks of code that you can define</li>
+					<li class="fragment">
+						<pre><code data-trim>
+							function askForWeather() {
+								let weather;
+								weather = prompt("How's the weather right now?");
+								alert("Oh, so it's " + weather + ", eh?");
+							}
+						</code></pre>
+					</li>
+					<li class="fragment">They can be called at any time!</li>
+					<li class="fragment">
+						<pre><code data-trim>
+							askForWeather();
+
+							...
+
+							askForWeather();
+
+							...
+
+							askForWeather();
+						</code></pre>
+					</li>
+					<li class="fragment">So we don't neet to copy code!</li>
+				</ul>
+			</section>
+			<section>
+				<h3>HTML queries</h3>
+			</section>
+			<section>
+				<h3>Demo</h3>
+				<p>How are you?</p>
+				<button id="goodButton">Good 👍</button><button id="badButton">Bad 👎</button>
+				<p id="answer"></p>
+				<style>
+					#goodButton, #badButton {
+						margin: 0.5em;
+						padding: 0.5em 2em;
+						font-size: 20pt;
+						cursor: pointer;
+					}
+					#goodButton {
+						background-color: lightgreen;
+					}
+					#badButton {
+						padding: 0.5em 2em;
+						font-size: 20pt;
+						background-color: lightcoral;
+					}
+				</style>
+				<script>
+					let goodButtonCmp = document.getElementById("goodButton");
+					let badButtonCmp = document.getElementById("badButton");
+					let answerCmp = document.getElementById("answer");
+
+					function goodButtonClick(event) {
+						answerCmp.textContent = "That's great 😊";
+					}
+
+					function badButtonClick(event) {
+						answerCmp.textContent = "Oh that sucks 😥";
+					}
+
+					goodButtonCmp.addEventListener("click", goodButtonClick);
+					badButtonCmp.addEventListener("click", badButtonClick);
+				</script>
+			</section>
+			<section>
+				<h3>For that you need to do:</h3>
+				<ul>
+					<li>
+						Find an element via it's id property
+						<pre><code data-trim>
+							let goodButtonCmp = document.getElementById("goodButton");
+						</code></pre>
+					</li>
+					<li>
+						Write a function
+						<pre><code data-trim>
+							function goodButtonClick(event) {
+								// do something here
+							}
+						</code></pre>
+					</li>
+					<li>
+						Attach this function to your element
+						<pre><code data-trim>
+							goodButtonCmp.addEventListener("click", goodButtonClick);
+						</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Now let's practice</h3>
+			</section>
+			<section>
+				<h3>Please do the following</h3>
+				<ul>
+					<li>Create a separate page in main project</li>
+					<li>Create a button</li>
+					<li>Make this button do the console.log('Clicked') if user clicked it</li>
+					<li>HINT: for that you need to apply all what we just learned :)</li>
+				</ul>
+			</section>
+			<section>
+				<h1>Homework</h1>
+      </section>
+      <section>
+        <h3>Practice what we learned in the class</h3>
+        <ul>
+          <li class="fragment">Make the burger icon react onClick</li>
+          <li class="fragment">If user clicked it it could be alert('somethingn') or console.log('something')</li>
+          <li class="fragment">Don't forget to push to github!</li>
+        </ul>
+      </section>
 		</div>
 	</div>
 
