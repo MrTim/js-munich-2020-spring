@@ -1,0 +1,119 @@
+<html>
+
+<head>
+    <title>Javascript orientation session!</title>
+    <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../../reveal.js/css/theme/moon.css">
+    <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+    <link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+    <link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+    <style>
+        .reveal pre {
+            margin: 0;
+        }
+
+        .monospace {
+            font-family: monospace !important;
+        }
+
+        .illustration {
+            border: 0px
+        }
+
+        .reveal li {
+            margin-bottom: 0.5em;
+        }
+
+        .reveal pre {
+            width: 100%;
+        }
+
+        .reveal pre code {
+            cursor: pointer;
+        }
+
+        .reveal li pre {
+            width: fit-content;
+        }
+
+        .logo {
+            position: fixed;
+            /* Sit on top of the page content */
+            z-index: 2;
+            /* Specify a stack order in case you're using a different order for other elements */
+        }
+    </style>
+</head>
+
+<body>
+<a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo"/></a>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Homework</h1>
+        </section>
+        <section>
+            <h3>Start setting up your project</h3>
+            <ul class="fragment">
+                <li>Create a NEW branch and add to your project</li>
+                <ul>
+                    <li>css folder with main.css file</li>
+                    <li>js folder with main.js file</li>
+                </ul>
+                <li>stage changes, commit, push to branch</li>
+                <li>Create new pull request</li>
+                <ul>
+                    <li class="fragment">select ALL teachers as reviewers</li>
+                </ul>
+                <li class="fragment">MERGE when pull request is APPROVED by at least 1 teacher</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Advanced challenge (Optional)</h3>
+            <ul class="fragment">
+                <li><a href="https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh">Connect
+                    to github with SSH</a></li>
+            </ul>
+        </section>
+        <section>
+            <h3>Additional materials</h3>
+            <ul class="fragment">
+                <li><a href="https://www.atlassian.com/git/tutorials/install-git">Atlassian install git tutorial</a>
+                </li>
+                <li><a href="https://git-scm.com/docs">Git documentation</a></li>
+                <li><a href="https://help.github.com/en/github">Github 'Help' documentation</a></li>
+                <li><a href="https://guides.github.com/">Github guides</a></li>
+                <li><a href="https://lab.github.com/">Github learning lab</a></li>
+                <li><a href="https://www.youtube.com/watch?v=SWYqp7iY_Tc">Git crash course (video)</a></li>
+                <li><a href="https://github.com/jlord/git-it-electron">Git-it: desktop app to learn git</a></li>
+            </ul>
+        </section>
+    </div>
+</div>
+
+<script src="../../jquery-3.3.1.slim.min.js"></script>
+<script src="../../reveal.js/lib/js/head.min.js"></script>
+<script src="../../reveal.js/js/reveal.js"></script>
+<script>
+    Reveal.initialize({
+        history: true,
+        dependencies: [
+            {
+                src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            },
+        ]
+    });
+
+    // Make each code example executable by clicking it:
+    $(document).ready(function () {
+        $('code').click(function (event) {
+            console.info('Click!', $(this).text());
+            eval($(this).text());
+        });
+    });
+</script>
+</body>
+
+</html>
