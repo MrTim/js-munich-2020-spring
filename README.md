@@ -2,34 +2,28 @@
 
 This repo contains teaching material and assignments for ReDI School in Munich JavaScript course for 2020 Spring semester.
 
-## First Meet -- lets get setup
-
+## [Lesson 1 - lets get setup](https://mrtim.github.io/js-munich-2020-spring/lessons/1_setup)
 - rules of the course
 - explanation of final projects
 - what is expected of students
+- what could be expected from teachers
 - logistics, where and what time
-- checkup what previous students have made
 - laptop checkup
-    - should be there from ReDI week
-    - chrome
+    - Chrome
     - github
-    - slack
-    - vs code installed?
-    - google classroom
-- Class work:
+    - Vscode
+- Homework:
     - build base page project structure
     - file system
     - html structure
     - basic css
-- Homework:
     - finish basic page
     - x div, x p
     - use x css rules
     - create github account
 
-## Second Meet -- git time , how to use git and commit homework
-
-- install git, @anna will help with windows users
+## [Lesson 2 - git time](https://mrtim.github.io/js-munich-2020-spring/lessons/2_git_time)
+- install git
 - create your project repo
 - configure master to be protected
 - invite teachers to collab on your repo
@@ -40,8 +34,7 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 - how to merge PR when all is done...
 - how to revert that merge
 
-
-## Third Meet -- adding first interactive component to project
+## [Lesson 3 - first interactive component](https://mrtim.github.io/js-munich-2020-spring/lessons/3_first_interactive_component)
 - introduce variables and basic functions
 - html query selector
 - Class work:
@@ -50,7 +43,7 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 - Homework:
     - add onClick to burger menu icon
 
-## Forth Meet -- changing stuff on click
+## [Lesson 4 - onClick reactions](https://mrtim.github.io/js-munich-2020-spring/lessons/4_onclick_reactions)
 - more buttons more power
 - change attribute
 - change text
@@ -60,8 +53,8 @@ This repo contains teaching material and assignments for ReDI School in Munich J
     - make bigger
     - try out on mouseEnter, mouseLeave
 
-## 5th Meet -- init berger menu
-- using skills built in first few lessons lets apply them to create a complex component. 
+## [Lesson 5 - init berger menu](https://mrtim.github.io/js-munich-2020-spring/lessons/5_init_burger_menu)
+- using skills built in first few lessons lets apply them to create a complex component.
 - create html markup ex div at bottom of the page
 - css hides it by default
 - css class shows it
