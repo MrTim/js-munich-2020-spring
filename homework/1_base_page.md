@@ -37,5 +37,5 @@ Footer:
 
 
 ### Submission:
-In the second lesson we will be covering how to commit your publish your code on github. For now
+In the second lesson we will be covering how to commit and publish your code on github. For now
 simply create the html page on you machines and have it ready for the start of the second class.
