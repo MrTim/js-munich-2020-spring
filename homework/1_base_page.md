@@ -9,13 +9,14 @@ visiting around the city. Please build a simple html page following the criteria
 Page:
 - Has background color other then '#fff'
 - Contains a header, footer, and main div
+- Text should not be pure #000 black
 
 Header:
 - This is the part at the top of the page that is used to navigate the site
 - Should use \<header\> html tag
 - Should contain three links: home, about me, and base page
 - The "base page" link should be different to signify it is the current page
-    - use a different color or background color for that link
+    - change color or background color for that link
 
 Main div:
 - This is the main container in the middle of the page containing the page's unique content. The
