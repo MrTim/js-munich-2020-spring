@@ -12,7 +12,7 @@ Page:
 
 Header:
 - This is the part at the top of the page that is used to navigate the site
-- Should use <header> html tag
+- Should use \<header\> html tag
 - Should contain three links: home, about me, and base page
 - The "base page" link should be different to signify it is the current page
     - use a different color or background color for that link
@@ -22,15 +22,15 @@ Main div:
   header and footer are more or less the same of every page but the content of the main div will
   change
 - This is where we want to highlight the things in Munich we miss
-- Include three sections using <section> tags
+- Include three sections using \<section\> tags
 - Each section should include
     1. the title of the place, ex "Boulderwelt Ost"
-    2. a picture of the place using <img>
+    2. a picture of the place using \<img\>
     3. a google maps link to the place with text "location"
     4. a description of at least a sentence in length on why you miss it
 
 Footer:
-- Should use <footer> html tag
+- Should use \<footer\> html tag
 - Should contain the following text "made by x for REDI: Frontend Development 2"
     - where x is your name
 
