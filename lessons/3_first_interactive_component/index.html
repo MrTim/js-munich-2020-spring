@@ -316,7 +316,7 @@ nameOfVariable = 5;
 					}
 
 					function badButtonClick(event) {
-						answerCmp.textContent = "Oh that sucks 😥";
+						answerCmp.textContent = "Oh that's sad 😥";
 					}
 
 					goodButtonCmp.addEventListener("click", goodButtonClick);
@@ -332,7 +332,7 @@ function goodButtonClick(event) {
 }
 
 function badButtonClick(event) {
-	answerCmp.textContent = "Oh that sucks 😥";
+	answerCmp.textContent = "Oh that's sad 😥";
 }
 
 goodButtonCmp.addEventListener("click", goodButtonClick);
@@ -365,14 +365,70 @@ badButtonCmp.addEventListener("click", badButtonClick);
 				</ul>
 			</section>
 			<section>
+				<h3>But where do we write JavaScipt code?</h3>
+			</section>
+			<section>
+				<p>We will use <b>&lt;script/&gt;</b> tag inside <b>index.html</b></p>
+				<pre>
+					<code>
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+	&lt;title&gt;My HTML Page&lt;/title&gt;
+	&lt;script type="text/javascript"&gt;
+	...
+	&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+		...
+ &lt;/body&gt;
+&lt;/html&gt;
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Example with buttons</h3>
+				<pre>
+					<code>
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+	&lt;title&gt;My HTML Page&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;p&gt;How are you?&lt;/p&gt;
+  &lt;button id="goodButton"&gt;Good 👍&lt;/button&gt;&lt;button id="badButton"&gt;Bad 👎&lt;/button&gt;
+  &lt;p id="answer">&lt;/p&gt;
+	&lt;script&gt;
+	 let goodButtonCmp = document.getElementById("goodButton");
+	 let badButtonCmp = document.getElementById("badButton");
+	 let answerCmp = document.getElementById("answer");
+
+	 function goodButtonClick(event) {
+		answerCmp.textContent = "That's great 😊";
+	 }
+
+ 	 function badButtonClick(event) {
+		answerCmp.textContent = "Oh that's sad 😥";
+	 }
+
+	 goodButtonCmp.addEventListener("click", goodButtonClick);
+	 badButtonCmp.addEventListener("click", badButtonClick);
+	&lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+					</code>
+				</pre>
+			</section>
+			<section>
 				<h3>Now let's practice</h3>
 			</section>
 			<section>
 				<h3>Please do the following</h3>
 				<ul>
-					<li>Create a separate page in main project</li>
-					<li>Create a button</li>
-					<li>Make this button do the console.log('Clicked') if user clicked it</li>
+					<li>Copy your index.html file and name it Lesson3.html</li>
+					<li>Create a Feel good button </li>
+					<li>Make this button do the console.log('I feel really good today') if user clicked it</li>
 					<li>HINT: for that you need to apply all what we just learned :)</li>
 				</ul>
 			</section>
@@ -380,13 +436,20 @@ badButtonCmp.addEventListener("click", badButtonClick);
 				<h1>Homework</h1>
       </section>
       <section>
-        <h3>Practice what we learned in the class</h3>
+        <h3>Practice what we learned in the class (PART 1)</h3>
         <ul>
-          <li class="fragment">Make the burger icon react onClick</li>
-          <li class="fragment">If user clicked it, show an alert('somethingn') or console.log('something')</li>
-          <li class="fragment">Don't forget to push to github!</li>
+					<li>Finish Feel not so good button from class example</li>
         </ul>
-      </section>
+			</section>
+			<section>
+				<h3>Practice what we learned in the class (PART 2)</h3>
+				<p>For main project (current index.html)</p>
+				<ul>
+          <li>Make the burger icon react onClick</li>
+          <li>If user clicked it, show an alert('something') or console.log('something')</li>
+          <li>Don't forget to push to github!</li>
+        </ul>
+			</section>
 		</div>
 	</div>
 
