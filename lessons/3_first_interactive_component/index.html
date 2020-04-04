@@ -8,6 +8,10 @@
 	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
 	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
 	<style>
+		b {
+			background-color: #ad0170;
+		}
+
 		.reveal pre {
 			margin: 0;
 		}
@@ -84,6 +88,18 @@
 
 					strangeButtonCmp.addEventListener("click", clickHandler);
 				</script>
+				<pre class="fragment">
+					<code>
+let strangeButtonCmp = document.getElementById("strangeButton");
+
+function clickHandler(event) {
+	console.log('Hey, you just pressed strange button');
+	alert('Heloooo');
+}
+
+strangeButtonCmp.addEventListener("click", clickHandler);
+					</code>
+				</pre>
 			</section>
 			<section>
 				<h3>Variables</h3>
@@ -170,11 +186,12 @@ nameOfVariable = 5;
 			<section>
 				<pre><code>alert("Hello world!");</code></pre>
 				<br>
+				<pre><code>prompt("What is your name?");</code></pre>
 				<br>
 				<ul>
-					<li class="fragment">What is "alert" here?</li>
-					<li class="fragment">It is a <b>function</b></li>
-					<li class="fragment">Functions are building blocks in JavaScipt</li>
+					<li class="fragment">What is "alert" and "prompt" here?</li>
+					<li class="fragment">They are <b>functions</b></li>
+					<li class="fragment">Functions are building blocks in JavaScript</li>
 					<li class="fragment">You will use functions <b>all the time</b></li>
 					<li class="fragment"> A JavaScript function is a block of code designed to perform a particular task.</li>
 				</ul>
@@ -305,6 +322,22 @@ nameOfVariable = 5;
 					goodButtonCmp.addEventListener("click", goodButtonClick);
 					badButtonCmp.addEventListener("click", badButtonClick);
 				</script>
+				<pre class="fragment"><code>
+let goodButtonCmp = document.getElementById("goodButton");
+let badButtonCmp = document.getElementById("badButton");
+let answerCmp = document.getElementById("answer");
+
+function goodButtonClick(event) {
+	answerCmp.textContent = "That's great 😊";
+}
+
+function badButtonClick(event) {
+	answerCmp.textContent = "Oh that sucks 😥";
+}
+
+goodButtonCmp.addEventListener("click", goodButtonClick);
+badButtonCmp.addEventListener("click", badButtonClick);
+				</code></pre>
 			</section>
 			<section>
 				<h3>For that you need to do:</h3>
