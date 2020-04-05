@@ -1,0 +1,120 @@
+<html>
+
+<head>
+  <title>Javascript orientation session!</title>
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css" />
+  <link rel="stylesheet" href="../../reveal.js/css/theme/moon.css" />
+  <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css" />
+  <link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js" />
+  <link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js" />
+  <style>
+    .reveal pre {
+      margin: 0;
+    }
+
+    .monospace {
+      font-family: monospace !important;
+    }
+
+    .illustration {
+      border: 0px;
+    }
+
+    .reveal li {
+      margin-bottom: 0.5em;
+    }
+
+    .reveal pre {
+      width: 100%;
+    }
+
+    .reveal pre code {
+      cursor: pointer;
+    }
+
+    .reveal li pre {
+      width: fit-content;
+    }
+
+    .logo {
+      position: fixed;
+      /* Sit on top of the page content */
+      z-index: 2;
+      /* Specify a stack order in case you're using a different order for other elements */
+    }
+
+    .great {
+      color: green
+    }
+  </style>
+</head>
+
+<body>
+  <a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Workflow</h1>
+      </section>
+      <section>
+        <h3>Steps to upload your homework</h3>
+        <ul class="fragment">
+          <li>Create a NEW branch for your homework.</li>
+          <p>
+            <pre><code>git branch homework-two</code></pre>
+          </p>
+          <li>Do your assignment on your homework branch.</li>
+          <li>Push your changes in that branch.</li>
+          <li>Create a pull request to merge that branch into master.</li>
+          <li>Select ALL teachers as reviewer.</li>
+          <li>Reviewers going to add comments (if they find things to improve).</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Steps to merge in master your homework</h3>
+        <ul class="fragment">
+          <li>
+            Do your new changes on your homework branch.
+          </li>
+          <li> Push your new changes and let reviewers know you updated the code adding a <strong>comment</strong>.</li>
+          </li>
+          <li>They go through and resolve their comments.</li>
+          <li>
+            When you get an approval comment (at least one of the teachers), you can merge your pull request in master.
+          </li>
+        </ul>
+        <div class="fragment great">
+          🎉 GREAT!! you complete your homework. 🎉
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="../../jquery-3.3.1.slim.min.js"></script>
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
+  <script src="../../reveal.js/js/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      history: true,
+      dependencies: [
+        {
+          src: '../../reveal.js/plugin/highlight/highlight.js',
+          async: false,
+          callback: function () {
+            hljs.initHighlightingOnLoad();
+          },
+        },
+      ],
+    });
+
+    // Make each code example executable by clicking it:
+    $(document).ready(function () {
+      $('code').click(function (event) {
+        console.info('Click!', $(this).text());
+        eval($(this).text());
+      });
+    });
+  </script>
+</body>
+
+</html>
