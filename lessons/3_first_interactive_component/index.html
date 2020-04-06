@@ -8,6 +8,10 @@
 	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
 	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
 	<style>
+		b {
+			background-color: #ad0170;
+		}
+
 		.reveal pre {
 			margin: 0;
 		}
@@ -84,6 +88,18 @@
 
 					strangeButtonCmp.addEventListener("click", clickHandler);
 				</script>
+				<pre class="fragment">
+					<code>
+let strangeButtonCmp = document.getElementById("strangeButton");
+
+function clickHandler(event) {
+	console.log('Hey, you just pressed strange button');
+	alert('Heloooo');
+}
+
+strangeButtonCmp.addEventListener("click", clickHandler);
+					</code>
+				</pre>
 			</section>
 			<section>
 				<h3>Variables</h3>
@@ -170,11 +186,12 @@ nameOfVariable = 5;
 			<section>
 				<pre><code>alert("Hello world!");</code></pre>
 				<br>
+				<pre><code>prompt("What is your name?");</code></pre>
 				<br>
 				<ul>
-					<li class="fragment">What is "alert" here?</li>
-					<li class="fragment">It is a <b>function</b></li>
-					<li class="fragment">Functions are building blocks in JavaScipt</li>
+					<li class="fragment">What is "alert" and "prompt" here?</li>
+					<li class="fragment">They are <b>functions</b></li>
+					<li class="fragment">Functions are building blocks in JavaScript</li>
 					<li class="fragment">You will use functions <b>all the time</b></li>
 					<li class="fragment"> A JavaScript function is a block of code designed to perform a particular task.</li>
 				</ul>
@@ -299,12 +316,28 @@ nameOfVariable = 5;
 					}
 
 					function badButtonClick(event) {
-						answerCmp.textContent = "Oh that sucks 😥";
+						answerCmp.textContent = "Oh that's sad 😥";
 					}
 
 					goodButtonCmp.addEventListener("click", goodButtonClick);
 					badButtonCmp.addEventListener("click", badButtonClick);
 				</script>
+				<pre class="fragment"><code>
+let goodButtonCmp = document.getElementById("goodButton");
+let badButtonCmp = document.getElementById("badButton");
+let answerCmp = document.getElementById("answer");
+
+function goodButtonClick(event) {
+	answerCmp.textContent = "That's great 😊";
+}
+
+function badButtonClick(event) {
+	answerCmp.textContent = "Oh that's sad 😥";
+}
+
+goodButtonCmp.addEventListener("click", goodButtonClick);
+badButtonCmp.addEventListener("click", badButtonClick);
+				</code></pre>
 			</section>
 			<section>
 				<h3>For that you need to do:</h3>
@@ -332,27 +365,76 @@ nameOfVariable = 5;
 				</ul>
 			</section>
 			<section>
+				<h3>But where do we write JavaScipt code?</h3>
+			</section>
+			<section>
+				<p>We will use <b>&lt;script/&gt;</b> tag inside <b>index.html</b></p>
+				<pre>
+					<code>
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+	&lt;title&gt;My HTML Page&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  ...
+  &lt;script type="text/javascript"&gt;
+  ...
+  &lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Example with buttons</h3>
+				<pre>
+					<code>
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+	&lt;title&gt;My HTML Page&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;p&gt;How are you?&lt;/p&gt;
+  &lt;button id="goodButton"&gt;Good 👍&lt;/button&gt;&lt;button id="badButton"&gt;Bad 👎&lt;/button&gt;
+  &lt;p id="answer">&lt;/p&gt;
+	&lt;script&gt;
+	 let goodButtonCmp = document.getElementById("goodButton");
+	 let badButtonCmp = document.getElementById("badButton");
+	 let answerCmp = document.getElementById("answer");
+
+	 function goodButtonClick(event) {
+		answerCmp.textContent = "That's great 😊";
+	 }
+
+ 	 function badButtonClick(event) {
+		answerCmp.textContent = "Oh that's sad 😥";
+	 }
+
+	 goodButtonCmp.addEventListener("click", goodButtonClick);
+	 badButtonCmp.addEventListener("click", badButtonClick);
+	&lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+					</code>
+				</pre>
+			</section>
+			<section>
 				<h3>Now let's practice</h3>
 			</section>
 			<section>
 				<h3>Please do the following</h3>
 				<ul>
-					<li>Create a separate page in main project</li>
-					<li>Create a button</li>
-					<li>Make this button do the console.log('Clicked') if user clicked it</li>
+					<li>Copy your index.html file and name it Lesson3.html</li>
+					<li>Create a Feel good button </li>
+					<li>Make this button do the console.log('I feel really good today') if user clicked it</li>
 					<li>HINT: for that you need to apply all what we just learned :)</li>
 				</ul>
 			</section>
 			<section>
 				<h1>Homework</h1>
-      </section>
-      <section>
-        <h3>Practice what we learned in the class</h3>
-        <ul>
-          <li class="fragment">Make the burger icon react onClick</li>
-          <li class="fragment">If user clicked it, show an alert('somethingn') or console.log('something')</li>
-          <li class="fragment">Don't forget to push to github!</li>
-        </ul>
+				<a href="https://mrtim.github.io/js-munich-2020-spring/homework/3_first_interactive_component">First interactive component</a>
       </section>
 		</div>
 	</div>

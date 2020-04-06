@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Redi JS Project</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" href="redi.png">
+</head>
+
+<body>
+  <p>How are you?</p>
+  <button id="goodButton">Good 👍</button><button id="badButton">Bad 👎</button>
+  <p id="answer"></p>
+  <style>
+    #goodButton, #badButton {
+      margin: 0.5em;
+      padding: 0.5em 2em;
+      font-size: 20pt;
+      cursor: pointer;
+    }
+    #goodButton {
+      background-color: lightgreen;
+    }
+    #badButton {
+      padding: 0.5em 2em;
+      font-size: 20pt;
+      background-color: lightcoral;
+    }
+  </style>
+  <script>
+    let goodButtonCmp = document.getElementById("goodButton");
+    let badButtonCmp = document.getElementById("badButton");
+    let answerCmp = document.getElementById("answer");
+
+    function goodButtonClick(event) {
+      answerCmp.textContent = "That's great 😊";
+    }
+
+    function badButtonClick(event) {
+      answerCmp.textContent = "Oh that's sad 😥";
+    }
+
+    goodButtonCmp.addEventListener("click", goodButtonClick);
+    badButtonCmp.addEventListener("click", badButtonClick);
+  </script>
+</body>
+</html>
