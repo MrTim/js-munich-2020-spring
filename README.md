@@ -75,3 +75,7 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 - 9th: loops
 - 10th: objects as struct
 - 11th: objects with functions
+    
+## Additional Ideas
+- Debugging and problems solving
+    - Chrome dev tools, how to use it where to look for the errors
