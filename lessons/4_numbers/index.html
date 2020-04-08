@@ -300,7 +300,53 @@ updateBtnEl.addEventListener('click', updateAnswer);
                         updateBtnEl.addEventListener('click', updateAnswer);
                     })();
                 </script>
+            </section>
+            <section>
+                <h3>Animal List Example</h3>
+                <ul id="animal_list">
+                    <li>dog</li>
+                </ul>
+                <div class="input_group">
+                    <div class="input-group__input-wrapper"><input id="animal_input" placeholder="animal" /></div>
+                    <button type="button" id="add_animal">add animal</button>
+                </div>
+                <script>
+                    (() => {
+                        const animalListEl = document.getElementById('animal_list');
+                        const animalInputEl = document.getElementById('animal_input');
+                        const animalAddBtn = document.getElementById('add_animal');
 
+                        function addAnimal() {
+                            const animal = animalInputEl.value;
+                            const animalEl = document.createElement('li');
+                            animalEl.textContent = animal;
+                            animalListEl.appendChild(animalEl);
+                            animalInputEl.value = '';
+                        }
+
+                        animalAddBtn.addEventListener('click', addAnimal);
+                    })();
+                </script>
+            </section>
+            <section>
+                <h3>Animal List Example Code</h3>
+                <pre>
+                    <code>
+const animalListEl = document.getElementById('animal_list');
+const animalInputEl = document.getElementById('animal_input');
+const animalAddBtn = document.getElementById('add_animal');
+
+function addAnimal() {
+    const animal = animalInputEl.value;
+    const animalEl = document.createElement('li');
+    animalEl.textContent = animal;
+    animalListEl.appendChild(animalEl);
+    animalInputEl.value = '';
+}
+
+animalAddBtn.addEventListener('click', addAnimal);
+                    </code>
+                </pre>
             </section>
         </div>
     </div>
