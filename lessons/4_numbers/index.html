@@ -1,0 +1,275 @@
+<html>
+    <head>
+        <title>Javascript orientation session!</title>
+        <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="../../reveal.js/css/theme/moon.css">
+        <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+        <link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+        <link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+        <style>
+                .reveal pre {
+                    margin: 0;
+                }
+
+                .monospace {
+                    font-family: monospace !important;
+                }
+
+                .illustration {
+                    border: 0px
+                }
+
+                .reveal li {
+                    margin-bottom: 0.5em;
+                }
+
+                .reveal pre {
+                    width: 100%;
+                }
+
+                .reveal pre code {
+                    cursor: pointer;
+                }
+
+                .reveal li pre {
+                    width: fit-content;
+                }
+
+                .logo {
+                    position: fixed;
+                    /* Sit on top of the page content */
+                    z-index: 2;
+                    /* Specify a stack order in case you're using a different order for other elements */
+                }
+        </style>
+    </head>
+
+<body>
+    <a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Lecture 4</h1>
+                <h3>Numbers, Math, and "change"</h3>
+            </section>
+            <section>
+                <h3>What we will cover today</h3>
+                <ul>
+                    <li class="fragment">the number type</li>
+                    <li class="fragment">basic arithmetic</li>
+                    <li class="fragment">browser element's "change" event</li>
+                    <li class="fragment">editing the DOM in more complex ways</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Numbers</h3>
+                <p>Integers and Floating Point numbers are treated the same</p>
+                <pre>
+                    <code>
+    let age = 3; // = 3
+    let heightInMeters = 1.5; // = 1.5
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h3>Review: console.log</h3>
+                <p>function used by developers to print text to the console</p>
+                <pre>
+                    <code>
+    let age = 3;
+    console.log(age);
+    console.log("age", age);
+    console.log({age});
+                    </code>
+                </pre>
+                <button type="button" id="logBtn">Log age</button>
+                <style>
+                    #logBtn {
+                        background-color: lightgreen;
+                        margin: 0.5em;
+                        padding: 0.5em 2em;
+                        font-size: 20pt;
+                    }
+                </style>
+                <script>
+                    (() => {
+                        let logBtn = document.getElementById("logBtn");
+                        logBtn.addEventListener("click", () => {
+                            let age = 3;
+                            console.log(age);
+                            console.log("age", age);
+                            console.log({age});
+                        });
+                    })();
+                </script>
+            </section>
+            <section>
+                <h3>browser element's change event</h3>
+                <ul>
+                    <li>happen when an input, select, or textarea's content changes</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event"> MDN Spec</a></li>
+                </ul>
+                <pre>
+                    <code>
+const nameInputEl = document.getElementById('name_input');
+const nameEl = document.getElementById('name');
+
+nameInputEl.addEventListener('change', function(event) {
+    nameEl.textContent = 'Name: ' + event.target.value;
+});
+                    </code>
+                </pre>
+                <div class="input_group">
+                    <div class="input-group__input-wrapper"><input id="name_input" placeholder="enter your name" /></div>
+                    <p id="name">Name: </p>
+                </div>
+                <style>
+                    .input_group {
+                        display: flex;
+                        width: 100%;
+                        justify-content: center;
+                    }
+                    .input-group__input-wrapper {
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+                        margin: 0 1em !important;
+                    }
+                </style>
+                <script>
+                    (() => {
+                        const nameInputEl = document.getElementById('name_input');
+                        const nameEl = document.getElementById('name');
+
+                        nameInputEl.addEventListener('change', function(event) {
+                            nameEl.textContent = 'Name: ' + event.target.value;
+                        });
+                    })();
+                </script>
+            </section>
+            <section>
+                <h3>basic arithmetic</h3>
+                <pre>
+                    <code>
+// Some basic arithmetic
+1 + 1; // = 2
+0.1 + 0.2; // = 0.30000000000000004
+8 - 1; // = 7
+10 * 2; // = 20
+35 / 5; // = 7
+
+// uneven division.
+5 / 2; // = 2.5
+
+// And modulo division.
+10 % 2; // = 0
+30 % 4; // = 2
+18.5 % 7; // = 4.5
+
+// Precedence is enforced with parentheses.
+(1 + 3) * 2; // = 8
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h3>Add calculator</h3>
+                <div class="input_group">
+                    <div class="input-group__input-wrapper"><input id="add_one_input" placeholder="number" /></div>
+                    <p>+</p>
+                    <div class="input-group__input-wrapper"><input id="add_two_input" placeholder="number" /></div>
+                    <p>=</p>
+                    <p id="add_answer"></p>
+                </div>
+                <pre>
+                    <code>
+const inputOneEl = document.getElementById('add_one_input');
+const inputTwoEl = document.getElementById('add_two_input');
+const answerEl = document.getElementById('add_answer');
+
+function handleInputChange() {
+    const answer = inputOneEl.value + inputTwoEl.value;
+    answerEl.textContent = answer;
+}
+inputOneEl.addEventListener('change', handleInputChange);
+inputTwoEl.addEventListener('change', handleInputChange);
+                    </code>
+                </pre>
+                <p class="fragment" style="color: red;">Oh no, it is adding strings together</p>
+                <script>
+                    (() => {
+                        const inputOneEl = document.getElementById('add_one_input');
+                        const inputTwoEl = document.getElementById('add_two_input');
+                        const answerEl = document.getElementById('add_answer');
+
+                        function handleInputChange() {
+                            const answer = inputOneEl.value + inputTwoEl.value;
+                            answerEl.textContent = answer;
+                        }
+                        inputOneEl.addEventListener('change', handleInputChange);
+                        inputTwoEl.addEventListener('change', handleInputChange);
+                    })();
+                </script>
+            </section>
+            <section>
+                <h3>Add calculator v2</h3>
+                <div class="input_group">
+                    <div class="input-group__input-wrapper"><input id="add_one_input_v2" placeholder="number" /></div>
+                    <p>+</p>
+                    <div class="input-group__input-wrapper"><input id="add_two_input_v2" placeholder="number" /></div>
+                    <p>=</p>
+                    <p id="add_answer_v2"></p>
+                </div>
+                <pre>
+                    <code>
+const inputOneEl = document.getElementById('add_one_input_v2');
+const inputTwoEl = document.getElementById('add_two_input_v2');
+const answerEl = document.getElementById('add_answer_v2');
+
+function handleInputChange() {
+    const answer = parseFloat(inputOneEl.value) + parseFloat(inputTwoEl.value);
+    answerEl.textContent = answer;
+}
+inputOneEl.addEventListener('change', handleInputChange);
+inputTwoEl.addEventListener('change', handleInputChange);
+                    </code>
+                </pre>
+                <p class="fragment" style="color: limegreen;">There we go, notice the parseFloat()</p>
+                <script>
+                    (() => {
+                        const inputOneEl = document.getElementById('add_one_input_v2');
+                        const inputTwoEl = document.getElementById('add_two_input_v2');
+                        const answerEl = document.getElementById('add_answer_v2');
+
+                        function handleInputChange() {
+                            const answer = parseFloat(inputOneEl.value) + parseFloat(inputTwoEl.value);
+                            answerEl.textContent = answer;
+                        }
+                        inputOneEl.addEventListener('change', handleInputChange);
+                        inputTwoEl.addEventListener('change', handleInputChange);
+                    })();
+                </script>
+            </section>
+        </div>
+    </div>
+
+    <script src="../../jquery-3.3.1.slim.min.js"></script>
+    <script src="../../reveal.js/lib/js/head.min.js"></script>
+    <script src="../../reveal.js/js/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            history: true,
+            dependencies: [
+                { src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () { hljs.initHighlightingOnLoad(); } },
+            ]
+        });
+
+        // Make each code example executable by clicking it:
+        $(document).ready(function () {
+            $('code').click(function (event) {
+                console.info('Click!', $(this).text());
+                eval($(this).text());
+            });
+        });
+    </script>
+</body>
+</html>
