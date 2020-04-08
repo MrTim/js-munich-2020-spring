@@ -249,6 +249,59 @@ inputTwoEl.addEventListener('change', handleInputChange);
                     })();
                 </script>
             </section>
+            <section>
+                <h3>Global Scope vs Local Scope</h3>
+                <div class="input_group">
+                    <div class="input-group__input-wrapper"><input id="add_one_input_v3" placeholder="number" /></div>
+                    <p>Total: <span id="add_answer_v3"></span></p>
+                </div>
+                <button type="button" id="update_answer_v3">update total</button>
+                <pre>
+                    <code>
+let sum = 0; // global scope
+
+function handleInputChange(event) {
+    const num = parseFloat(event.target.value); // local scope
+    sum = sum + num;
+}
+
+inputOneEl.addEventListener('change', handleInputChange);
+
+function updateAnswer() {
+    answerEl.textContent = sum;
+    console.log('sum:', sum);
+    console.log('num:', num); // will error because there is no num in this scope
+}
+
+updateBtnEl.addEventListener('click', updateAnswer);
+                    </code>
+                </pre>
+                <script>
+                    (() => {
+                        const inputOneEl = document.getElementById('add_one_input_v3');
+                        const updateBtnEl = document.getElementById('update_answer_v3');
+                        const answerEl = document.getElementById('add_answer_v3');
+
+                        let sum = 0; // global scope
+
+                        function handleInputChange(event) {
+                            const num = parseFloat(event.target.value); // local scope
+                            sum = sum + num;
+                        }
+
+                        inputOneEl.addEventListener('change', handleInputChange);
+
+                        function updateAnswer() {
+                            answerEl.textContent = sum;
+                            console.log('sum:', sum);
+                            console.log('num:', num); // will error because there is no num in this scope
+                        }
+
+                        updateBtnEl.addEventListener('click', updateAnswer);
+                    })();
+                </script>
+
+            </section>
         </div>
     </div>
 
