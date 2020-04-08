@@ -79,7 +79,6 @@
     let age = 3;
     console.log(age);
     console.log("age", age);
-    console.log({age});
                     </code>
                 </pre>
                 <button type="button" id="logBtn">Log age</button>
@@ -98,7 +97,6 @@
                             let age = 3;
                             console.log(age);
                             console.log("age", age);
-                            console.log({age});
                         });
                     })();
                 </script>
@@ -160,11 +158,6 @@ nameInputEl.addEventListener('change', function(event) {
 
 // uneven division.
 5 / 2; // = 2.5
-
-// And modulo division.
-10 % 2; // = 0
-30 % 4; // = 2
-18.5 % 7; // = 4.5
 
 // Precedence is enforced with parentheses.
 (1 + 3) * 2; // = 8
@@ -354,6 +347,28 @@ animalAddBtn.addEventListener('click', addAnimal);
                     </code>
                 </pre>
             </section>
+            <section>
+                <h3>Creating elements with JS!</h3>
+                <pre>
+                    <code>
+// HTML: <p id="one">Travis</p>
+// same as
+
+const nameEl = document.createElement('p');
+nameEl.textContent = "Travis";
+
+document.body.appendChild(nextEl);
+                    </code>
+                </pre>
+                <ul>
+                    <li><code>document.createElement</code> is a function that create dom elements</li>
+                    <li><code>el.appendChild</code> is a function that adds elements to the dom</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Class work</h3>
+                <p>Time to break into small groups and make this:</p>
+                <img src="./lesson_4_demo.png" />
         </div>
     </div>
 
