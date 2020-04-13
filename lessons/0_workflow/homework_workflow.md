@@ -17,7 +17,7 @@ git pull origin master && git fetch
 3. Create a NEW branch for your homework from master.
 
 ```
-git checkout -b homework_1
+git checkout -b homework_1_missing_places
 ```
 
 4. Do your changes and add to your homework branch.
@@ -35,14 +35,14 @@ git commit -m "Add your own message here"
 6. Once you done with your assigment push your changes on your new branch.
 
 ```
-git push --set-upstream origin homework_1
+git push --set-upstream origin homework_1_missing_places
 ```
 
 7. Create a pull request to merge your new branch into master.
 
 ![Create pull request](./pull_request.png)
 
-8. Select ALL teachers as reviewers.
+8. Select **ALL** teachers as reviewers (5 teachers).
 
 ![Create pull request](./reviewers.png)
 
@@ -71,7 +71,7 @@ git commit -m "Add your own message here"
 4. Once you done with your updates push your changes on your homework branch.
 
 ```
-git push --set-upstream origin homework_1
+git push --set-upstream origin homework_1_missing_places
 ```
 
 5. Let reviewers know that you updated the code adding a comment.
