@@ -1,4 +1,4 @@
-# Lesson 4 Homework
+# Homework 4 -- Calculator
 
 Finish the sort of visual additional calculator we started in class using what we have learned in the first few lectures.
 

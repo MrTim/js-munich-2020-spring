@@ -1,4 +1,4 @@
-# Homework One -- Base Page
+# Homework 1 -- Base Page
 
 Thanks for joining us for Frontend Development 2. We want to start the class off with a simple base
 page we can build off in future lessons. Quarantine is challenging so lets share some places we miss

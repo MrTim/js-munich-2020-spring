@@ -1,4 +1,4 @@
-# Homework 2: Start setting up your project with folders
+# Homework 2 -- Start setting up your project with folders
 
 The goal of this homework is to get use to using the pull request homework work flow by creating
 some folders.

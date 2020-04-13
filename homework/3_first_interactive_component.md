@@ -1,4 +1,4 @@
-# Homework &mdash; First interactive component
+# Homework 3 -- First interactive component
 
 In thi homework we will practice variables usage, function and some html queries. You can reference to the lecture slides if you want to refresh knowlage [Lesson 3 - first interactive component](https://mrtim.github.io/js-munich-2020-spring/lessons/3_first_interactive_component)
 
