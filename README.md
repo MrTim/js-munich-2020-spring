@@ -50,18 +50,23 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 - Homework:
   - add onClick to burger menu icon
 
-## [Lesson 4 - onClick reactions](https://mrtim.github.io/js-munich-2020-spring/lessons/4_onclick_reactions)
+## [Lesson 4 - numbers](https://mrtim.github.io/js-munich-2020-spring/lessons/4_numbers)
 
-- more buttons more power
-- change attribute
-- change text
-- toggle class
+- TODO: add description
+- classwork:
+  - create simple Calculator
+
+## [Lesson 5 - recap and practice](https://mrtim.github.io/js-munich-2020-spring/lessons/5_recap_and_practice)
+
+- recap what we learend so far
+- one more event: mouseover/mouseleave
+- practice
+- Classwork:
+  - Practice button mouseover/mouseleave events
 - Homework:
-  - apply skills to button you press
-  - make bigger
-  - try out on mouseEnter, mouseLeave
+  - create PR with finished classwork
 
-## [Lesson 5 - init berger menu](https://mrtim.github.io/js-munich-2020-spring/lessons/5_init_burger_menu)
+## [Lesson 6 - init berger menu](https://mrtim.github.io/js-munich-2020-spring/lessons/6_init_burger_menu)
 
 - using skills built in first few lessons lets apply them to create a complex component.
 - create html markup ex div at bottom of the page
@@ -85,7 +90,7 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 - 9th: loops
 - 10th: objects as struct
 - 11th: objects with functions
-    
+
 ## Additional Ideas
 - Debugging and problems solving
     - Chrome dev tools, how to use it where to look for the errors

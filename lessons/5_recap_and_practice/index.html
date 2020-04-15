@@ -1,0 +1,226 @@
+<html>
+
+<head>
+	<title>Lesson 5</title>
+	<link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="../../reveal.js/css/theme/moon.css">
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+	<style>
+		b {
+			background-color: #ad0170;
+		}
+
+		.reveal pre {
+			margin: 0;
+		}
+
+		.monospace {
+			font-family: monospace !important;
+		}
+
+		.illustration {
+			border: 0px
+		}
+
+		.reveal li {
+			margin-bottom: 0.5em;
+		}
+
+		.reveal pre {
+			width: 100%;
+		}
+
+		.reveal pre code {
+			cursor: pointer;
+		}
+
+		.reveal li pre {
+			width: fit-content;
+		}
+
+		.logo {
+			position: fixed;
+			/* Sit on top of the page content */
+			z-index: 2;
+			/* Specify a stack order in case you're using a different order for other elements */
+		}
+	</style>
+</head>
+
+<body>
+	<a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Lecture</h1>
+				<h3>Recap and practice</h3>
+			</section>
+			<section>
+				<h3>What we would cover?</h3>
+				<ul>
+					<li class="fragment">General processes</li>
+					<li class="fragment">Homeworks workflow</li>
+					<li class="fragment">mouseover/mouseleave events</li>
+					<li class="fragment">Practice</li>
+				</ul>
+			</section>
+			<section>
+				<h3>General processes</h3>
+				<h4 class="fragment">What does it mean?</h4>
+				<ul class="fragment">
+					<li>Homework rules</li>
+					<li>Gtihub process</li>
+					<li>Commitment</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Homework rules</h3>
+				<ul>
+					<li>One homework per week (on Monday)</li>
+					<li>Deadline - Soft deadline on <b>Saturday 18:00</b>, hard <b>Sunday 23:59</b></li>
+				</ul>
+			</section>
+			<section>
+				<h3>Github process</h3>
+				<ul>
+					<li>1 branch per homework</li>
+					<li>Branch should have meaningful name (index-page, hw2-folder-structure)</li>
+					<li>1 pull request with meaningful name and description per homework</li>
+					<li>ALL teachers selected as reviewers</li>
+					<li>At least 1 approval before merge</li>
+					<li>Review comments addressed within same pull request</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Commitment</h3>
+				<ul>
+					<li><b>Teachers</b>: should check all homeworks before next Monday</li>
+					<li><b>Students</b>: should provide homework for review before deadline</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Homeworks workflow</h3>
+				<a href="https://mrtim.github.io/js-munich-2020-spring/lessons/0_workflow/homework_workflow">
+					explanation here
+				</a>
+			</section>
+			<section>
+				<h1>Questions?</h1>
+			</section>
+			<section>
+				<h3>Let's try new events</h3>
+				<div>mouseover and mouseleave</div>
+			</section>
+			<section>
+				<h3>Demo</h3>
+				<button id="strangeButton">Strange button</button>
+				<style>
+					#strangeButton {
+						background-color: lightgreen;
+						margin: 0.5em;
+						padding: 0.5em 2em;
+						font-size: 20pt;
+						cursor: pointer;
+					}
+					.inverted-color {
+						filter: invert(1);
+					}
+					.big-button {
+						height: 300px;
+						width: 500px;
+					}
+				</style>
+				<script>
+					let strangeButtonCmp = document.getElementById("strangeButton");
+					const initialLabel = "Strange button";
+
+					function clickHandler(event) {
+						console.log('Hey, you just pressed strange button');
+					}
+
+					function mouseOverHandler(event) {
+						console.log('Mouse here!');
+						strangeButtonCmp.innerText = "What just happened?"
+						strangeButtonCmp.classList.add('inverted-color');
+						strangeButtonCmp.classList.add('big-button');
+					}
+
+					function mouseLeaveHandler(event) {
+						console.log('Mouse just left that button');
+						strangeButtonCmp.innerText = initialLabel;
+						strangeButtonCmp.classList.remove('inverted-color');
+						strangeButtonCmp.classList.remove('big-button');
+					}
+
+					strangeButtonCmp.addEventListener("click", clickHandler);
+					strangeButtonCmp.addEventListener("mouseover", mouseOverHandler);
+					strangeButtonCmp.addEventListener("mouseleave", mouseLeaveHandler);
+				</script>
+				<pre>
+					<code>
+let strangeButtonCmp = document.getElementById("strangeButton");
+const initialLabel = "Strange button";
+
+function clickHandler(event) {
+	console.log('Hey, you just pressed strange button');
+}
+
+function mouseOverHandler(event) {
+	console.log('Mouse here!');
+	strangeButtonCmp.innerText = "What just happened?"
+	strangeButtonCmp.classList.add('inverted-color');
+	strangeButtonCmp.classList.add('big-button');
+}
+
+function mouseLeaveHandler(event) {
+	console.log('Mouse just left that button');
+	strangeButtonCmp.innerText = initialLabel;
+	strangeButtonCmp.classList.remove('inverted-color');
+	strangeButtonCmp.classList.remove('big-button');
+}
+
+strangeButtonCmp.addEventListener("click", clickHandler);
+strangeButtonCmp.addEventListener("mouseover", mouseOverHandler);
+strangeButtonCmp.addEventListener("mouseleave", mouseLeaveHandler);
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Class work</h3>
+				<a href="https://mrtim.github.io/js-munich-2020-spring/lessons/5_recap_and_practice/classwork">
+					Instructions here
+				</a>
+			</section>
+			<section>
+				<h3>Homework</h3>
+				<a href="https://mrtim.github.io/js-munich-2020-spring/lessons/5_recap_and_practice/homework">
+					Instructions here
+				</a>
+			</section>
+		</div>
+	</div>
+
+	<script src="../../jquery-3.3.1.slim.min.js"></script>
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			history: true,
+			dependencies: [
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () { hljs.initHighlightingOnLoad(); } },
+			]
+		});
+
+		// Make each code example executable by clicking it:
+		$(document).ready(function () {
+			$('code').click(function (event) {
+				console.info('Click!', $(this).text());
+				eval($(this).text());
+			});
+		});
+	</script>
+</body>
+
+</html>
