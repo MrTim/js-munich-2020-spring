@@ -8,7 +8,7 @@
 
 # Deadline
 
-Saturday 6pm 18.04.2020
+Saturday 18:00 18.04.2020
 
 ## Lecture slides
 
