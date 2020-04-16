@@ -1,4 +1,4 @@
-# Homework &mdash; First interactive component
+# Homework 3 -- First interactive component
 
 In thi homework we will practice variables usage, function and some html queries. You can reference to the lecture slides if you want to refresh knowlage [Lesson 3 - first interactive component](https://mrtim.github.io/js-munich-2020-spring/lessons/3_first_interactive_component)
 
@@ -16,4 +16,4 @@ For main project (current index.html):
 
 ### Submission:
 Don't forget to push to github!
-If you want to refresh knowlage about git workflow please follow these slides: <slides link here>
+If you want to refresh knowlage about git workflow please follow these slides: https://mrtim.github.io/js-munich-2020-spring/lessons/2_git_time/
