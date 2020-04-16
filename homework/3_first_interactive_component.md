@@ -16,4 +16,4 @@ For main project (current index.html):
 
 ### Submission:
 Don't forget to push to github!
-If you want to refresh knowlage about git workflow please follow these slides: <slides link here>
+If you want to refresh knowlage about git workflow please follow these slides: https://mrtim.github.io/js-munich-2020-spring/lessons/2_git_time/
