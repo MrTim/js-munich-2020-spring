@@ -1,5 +1,6 @@
 # Lesson 5 Homework
 
+0) Check that your repo is listed under Wiki -> Lesson 2
 1) Finish all previous homeworks
   1 [Base page](https://mrtim.github.io/js-munich-2020-spring/homework/1_base_page)
   2 [Interactive component](https://mrtim.github.io/js-munich-2020-spring/homework/3_first_interactive_component)
