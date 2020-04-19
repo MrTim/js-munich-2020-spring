@@ -71,6 +71,7 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 - introduction to concept of object
 - attributes
 - nested objects
+- querySelector
 - Homework:
   - start creating online store page with some goods
 
