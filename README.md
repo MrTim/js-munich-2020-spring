@@ -66,16 +66,13 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 - Homework:
   - create PR with finished classwork
 
-## [Lesson 6 - init berger menu](https://mrtim.github.io/js-munich-2020-spring/lessons/6_init_burger_menu)
+## [Lesson 6 - intro to objects](https://mrtim.github.io/js-munich-2020-spring/lessons/6_objects_intro)
 
-- using skills built in first few lessons lets apply them to create a complex component.
-- create html markup ex div at bottom of the page
-- css hides it by default
-- css class shows it
-- add onClick to burger menu open menu and close it
+- introduction to concept of object
+- attributes
+- nested objects
 - Homework:
-  - create second page copy and paste from index.html
-  - burger menu with two items index and page 1
+  - start creating online store page with some goods
 
 ## Next Meets
 
