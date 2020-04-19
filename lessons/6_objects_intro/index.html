@@ -1,0 +1,332 @@
+<html>
+
+<head>
+    <title>Javascript orientation session!</title>
+    <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../../reveal.js/css/theme/moon.css">
+    <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+    <link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+    <link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+    <style>
+        .reveal pre {
+            margin: 0;
+        }
+
+        .monospace {
+            font-family: monospace !important;
+        }
+
+        .illustration {
+            border: 0px
+        }
+
+        .reveal li {
+            margin-bottom: 0.5em;
+        }
+
+        .reveal pre {
+            width: 100%;
+        }
+
+        .reveal pre code {
+            cursor: pointer;
+        }
+
+        .reveal li pre {
+            width: fit-content;
+        }
+
+        .logo {
+            position: fixed;
+            /* Sit on top of the page content */
+            z-index: 2;
+            /* Specify a stack order in case you're using a different order for other elements */
+        }
+
+        .book {
+            background-color: #eee8d5;
+            text-align: left;
+            width: 100%;
+            display: flex;
+            min-height: 40vh;
+        }
+
+        .book img {
+            max-height: 35vh;
+        }
+
+        .book div {
+            padding: 5px;
+        }
+
+        .pages {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .price {
+            font-weight: bold !important;
+        }
+
+        .book-sample-img img {
+            max-height: 40vh;;
+        }
+    </style>
+</head>
+
+<body>
+<a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo"/></a>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Lecture</h1>
+            <h3>Intro to objects</h3>
+        </section>
+
+        <section>
+            <h3>Let's say you want to sell books on your website...</h3>
+            <p class="fragment">You start with 1 book</p>
+            <div class="fragment">
+                <div class="book">
+                    <img src="zombie_raccoons.jpg">
+                    <div>
+                        <div>Name: <span>Zombie Raccoons & Killer Bunnies</span></div>
+                        <div>Price: <span class="price">20 &euro;</span></div>
+                        <div>Length: <span class="pages">643 pages</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>How your HTML might look like?</h3>
+            <div class="fragment">
+            <pre>
+					<code data-trim>
+<div class="book">
+	<div>
+    	<img class="image" src="zombie_raccoons.jpg">
+	</div>
+    <div>
+		<div>Name: <span>Zombie Raccoons & Killer Bunnies</span></div>
+		<div>Price: <span class="price">20 &euro;</span></div>
+		<div>Length: <span class="pages">643 pages</span></div>
+	</div>
+</div>
+                	</code>
+				</pre>
+            </div>
+        </section>
+
+        <section class="">
+            <h3>But all this information can come from elsewhere</h3>
+            <p class="fragment">Lest not hard-code it in HTML</p>
+            <div class="fragment">
+				<pre><code>
+let name = "Zombie Raccoons & Killer Bunnies";
+let image = "zombie_raccoons.jpg";
+let pageCount = 643;
+let price = 20;
+
+document.querySelector(".book img").src = image;
+document.querySelector(".book.name").innerText = name;
+document.querySelector(".book.price").innerText = price;
+document.querySelector(".book.pages").innerText = pageCount;
+          </code></pre>
+            </div>
+            <div class="fragment">
+            </div>
+
+        </section>
+
+        <section>
+            <h3>Time to add a second book!</h3>
+            <div class="fragment">
+                <div class="book-sample-img">
+                    <img src="zombie_raccoons.jpg">
+                    <img src="goats.jpg">
+                </div>
+                <br>
+                <div class="fragment">
+                    <pre><code data-trim>
+            let title1 = "Zombie Raccoons & Killer Bunnies";
+            let image1 = "zombie_raccoons.jpg";
+            let pageCount1 = 643;
+            let price1 = 20;
+
+            let title2 = "Raising goats for dummies";
+            let image2 = "goats.jpg";
+            let pageCount2 = 577;
+            let price2 = 15;
+          </code></pre>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="">
+            <h3>Now it would be really great to put them all together!</h3>
+        </section>
+
+        <section>
+            <h3>OBJECTS TO THE RESCUE!!</h3>
+            <div class="fragment">
+            <pre><code data-trim>
+              let book = {
+                title: "Zombie Raccoons & Killer Bunnies",
+                image: "zombie_raccoons.jpg",
+                pageCount: 643,
+                price: 20
+              };
+            </code></pre>
+            </div>
+            <br/>
+            <div class="fragment">
+            <pre><code data-trim>
+document.querySelector(".book img").src = book.image;
+document.querySelector(".book.name").innerText = book.name;
+document.querySelector(".book.price").innerText = book.price;
+document.querySelector(".book.pages").innerText = book.pageCount;
+            </code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h3>Objects in a nutshell</h3>
+            <ul>
+                <li class="fragment">Objects consist of keys and values</li>
+                <li class="fragment">The key is like the name of the variable</li>
+                <li class="fragment">The value is like a variable itself</li>
+            </ul>
+            <br/>
+            <div class="fragment">
+                            <pre><code>
+          let book = {
+            title: "Zombie Raccoons & Killer Bunnies",
+            image: "zombie_raccoons.jpg",
+            pageCount: 643,
+            price: 20
+          };
+        </code></pre>
+            </div>
+        </section>
+        <section>
+            <h2>What can we do with objects?</h2>
+        </section>
+        <section>
+            <h3>Get value of it's attributes</h3>
+            <pre><code data-trim>
+              let person = {
+                name: "Anna",
+                age: 29,
+              };
+
+              alert(person.name + " is " + person.age + " years old");
+            </code></pre>
+        </section>
+        <section>
+            <h3>Change value of it's attributes</h3>
+            <pre><code data-trim>
+              let person = {
+                name: "Anna",
+                age: 29,
+              };
+
+              person.age = 17; // Happy birthday!
+
+              alert(person.name + " is " + person.age + " again");
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>And even add new attributes</h3>
+            <pre><code data-trim>
+              let person = {
+                name: "Anna",
+                age: 17,
+              };
+              person.hobby = "just chilling";
+
+              alert(person.name + "'s hobby is " + person.hobby);
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>Objects in real life</h3>
+            <p class="fragment">We've seen them before: Every time we saw a dot! Do you remember?</p>
+            <div class="fragment">
+                <div>
+                    <button id="strangeButton" style="font-size: 20px">That strange button</button>
+                </div>
+                <br/>
+                <div>
+                    <pre><code>
+let strangeButtonCmp = document.getElementById("strangeButton")
+strangeButtonCmp.classList.add('new-class');
+console.log(strangeButtonCmp.classList);
+            </code></pre>
+                </div>
+
+            </div>
+            <p class="fragment">Values inside objects can be anything, even functions or objects!</p>
+        </section>
+
+        <section>
+            <h3>Nested Objects</h3>
+            <p class="fragment">Objects inside objects are called "nested objects":</p>
+            <div class="fragment">
+                            <pre><code data-trim>
+              let person = {
+                name: "Anna",
+                age: 17,
+                favoriteBook: {
+                  name: "Raising goats for dummies",
+                  pages: 577
+                }
+              };
+
+              alert(person.name + "'s favorite book is " + person.favoriteBook.name);
+            </code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h3>Class work</h3>
+            <a href="https://mrtim.github.io/js-munich-2020-spring/lessons/6_objects_intro/classwork">
+                Instructions here
+            </a>
+        </section>
+        <section>
+            <h3>Homework</h3>
+            <a href="https://mrtim.github.io/js-munich-2020-spring/lessons/6_objects_intro/homework">
+                Instructions here
+            </a>
+        </section>
+    </div>
+</div>
+
+<script src="../../jquery-3.3.1.slim.min.js"></script>
+<script src="../../reveal.js/lib/js/head.min.js"></script>
+<script src="../../reveal.js/js/reveal.js"></script>
+<script>
+    Reveal.initialize({
+        history: true,
+        dependencies: [
+            {
+                src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            },
+        ]
+    });
+
+    // Make each code example executable by clicking it:
+    $(document).ready(function () {
+        $('code').click(function (event) {
+            console.info('Click!', $(this).text());
+            eval($(this).text());
+        });
+    });
+</script>
+</body>
+
+</html>
