@@ -4,6 +4,8 @@ Start working on your little online store prototype and practice objects and arr
 
 > Important: do not forget to do your homework on a separate branch with meaningful name
 
+## Spec
+
 1. Create a simple page to display products of your imaginary online store
 2. Decide on 1 type of items sold (ex. cars, dresses, goats)
 3. Create object representations of items you sell.
