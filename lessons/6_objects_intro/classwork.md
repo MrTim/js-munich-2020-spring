@@ -1,4 +1,4 @@
-# Lesson 5 Classwork
+# Lesson 6 Classwork
 
 Let's practice working with objects
 

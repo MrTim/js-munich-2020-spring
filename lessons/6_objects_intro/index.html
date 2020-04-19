@@ -87,11 +87,11 @@
             <p class="fragment">You start with 1 book</p>
             <div class="fragment">
                 <div class="book">
-                    <img src="zombie_raccoons.jpg">
+                    <img src="goats.jpg">
                     <div>
-                        <div>Name: <span>Zombie Raccoons & Killer Bunnies</span></div>
-                        <div>Price: <span class="price">20 &euro;</span></div>
-                        <div>Length: <span class="pages">643 pages</span></div>
+                        <div>Name: <span>Raising goats for dummies</span></div>
+                        <div>Price: <span class="price">15 &euro;</span></div>
+                        <div>Length: <span class="pages">340 pages</span></div>
                     </div>
                 </div>
             </div>
@@ -102,16 +102,14 @@
             <div class="fragment">
             <pre>
 					<code data-trim>
-<div class="book">
-	<div>
-    	<img class="image" src="zombie_raccoons.jpg">
-	</div>
-    <div>
-		<div>Name: <span>Zombie Raccoons & Killer Bunnies</span></div>
-		<div>Price: <span class="price">20 &euro;</span></div>
-		<div>Length: <span class="pages">643 pages</span></div>
-	</div>
-</div>
+              <div class="book">
+                    <img src="goats.jpg">
+                    <div>
+                        <div>Name: <span>Raising goats for dummies</span></div>
+                        <div>Price: <span class="price">15 &euro;</span></div>
+                        <div>Length: <span class="pages">340 pages</span></div>
+                    </div>
+                </div>
                 	</code>
 				</pre>
             </div>
@@ -122,16 +120,18 @@
             <p class="fragment">Lest not hard-code it in HTML</p>
             <div class="fragment">
 				<pre><code>
-let name = "Zombie Raccoons & Killer Bunnies";
-let image = "zombie_raccoons.jpg";
-let pageCount = 643;
-let price = 20;
+let name = "Raising goats for dummies";
+let image = "goats.jpg";
+let pageCount = 340;
+let price = 15;
 
 document.querySelector(".book img").src = image;
 document.querySelector(".book.name").innerText = name;
 document.querySelector(".book.price").innerText = price;
 document.querySelector(".book.pages").innerText = pageCount;
           </code></pre>
+                <br>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank">querySelector info</a>
             </div>
             <div class="fragment">
             </div>
@@ -142,21 +142,21 @@ document.querySelector(".book.pages").innerText = pageCount;
             <h3>Time to add a second book!</h3>
             <div class="fragment">
                 <div class="book-sample-img">
-                    <img src="zombie_raccoons.jpg">
                     <img src="goats.jpg">
+                    <img src="zombie_raccoons.jpg">
                 </div>
                 <br>
                 <div class="fragment">
                     <pre><code data-trim>
-            let title1 = "Zombie Raccoons & Killer Bunnies";
-            let image1 = "zombie_raccoons.jpg";
-            let pageCount1 = 643;
-            let price1 = 20;
+            let title1 = "Raising goats for dummies";
+            let image1 = "goats.jpg";
+            let pageCount1 = 340;
+            let price1 = 15;
 
-            let title2 = "Raising goats for dummies";
-            let image2 = "goats.jpg";
-            let pageCount2 = 577;
-            let price2 = 15;
+            let title2 = "Zombie Raccoons & Killer Bunnies";
+            let image2 = "zombie_raccoons.jpg";
+            let pageCount2 = 643;
+            let price2 = 20;
           </code></pre>
 
                 </div>
@@ -164,7 +164,8 @@ document.querySelector(".book.pages").innerText = pageCount;
         </section>
 
         <section class="">
-            <h3>Now it would be really great to put them all together!</h3>
+            <h3>But in two weeks two new books arrived</h3>
+            <h3> What we gonna do now?</h3>
         </section>
 
         <section>
@@ -172,10 +173,10 @@ document.querySelector(".book.pages").innerText = pageCount;
             <div class="fragment">
             <pre><code data-trim>
               let book = {
-                title: "Zombie Raccoons & Killer Bunnies",
-                image: "zombie_raccoons.jpg",
-                pageCount: 643,
-                price: 20
+                title: "Raising goats for dummies",
+                image: "goats.jpg",
+                pageCount: 340,
+                price: 15
               };
             </code></pre>
             </div>
@@ -198,14 +199,14 @@ document.querySelector(".book.pages").innerText = book.pageCount;
                 <li class="fragment">The value is like a variable itself</li>
             </ul>
             <br/>
-            <div class="fragment">
+            <div>
                             <pre><code>
-          let book = {
-            title: "Zombie Raccoons & Killer Bunnies",
-            image: "zombie_raccoons.jpg",
-            pageCount: 643,
-            price: 20
-          };
+              let book = {
+                title: "Raising goats for dummies",
+                image: "goats.jpg",
+                pageCount: 340,
+                price: 15
+              };
         </code></pre>
             </div>
         </section>
@@ -215,38 +216,45 @@ document.querySelector(".book.pages").innerText = book.pageCount;
         <section>
             <h3>Get value of it's attributes</h3>
             <pre><code data-trim>
-              let person = {
-                name: "Anna",
-                age: 29,
+              let book = {
+                title: "Raising goats for dummies",
+                image: "goats.jpg",
+                pageCount: 340,
+                price: 15
               };
 
-              alert(person.name + " is " + person.age + " years old");
+          alert("Book name is " + book.title);
             </code></pre>
         </section>
         <section>
             <h3>Change value of it's attributes</h3>
             <pre><code data-trim>
-              let person = {
-                name: "Anna",
-                age: 29,
+              let book = {
+                title: "Raising goats for dummies",
+                image: "goats.jpg",
+                pageCount: 340,
+                price: 15
               };
 
-              person.age = 17; // Happy birthday!
+              book.pageCount = 900;
 
-              alert(person.name + " is " + person.age + " again");
+              alert(book.title + " has " + book.pageCount + " pages");
             </code></pre>
         </section>
 
         <section>
             <h3>And even add new attributes</h3>
             <pre><code data-trim>
-              let person = {
-                name: "Anna",
-                age: 17,
+              let book = {
+                title: "Raising goats for dummies",
+                image: "goats.jpg",
+                pageCount: 340,
+                price: 15
               };
-              person.hobby = "just chilling";
 
-              alert(person.name + "'s hobby is " + person.hobby);
+              book.rating = "5 stars";
+
+              alert(book.title + " book was rated with " + book.rating);
             </code></pre>
         </section>
 
@@ -280,7 +288,7 @@ console.log(strangeButtonCmp.classList);
                 age: 17,
                 favoriteBook: {
                   name: "Raising goats for dummies",
-                  pages: 577
+                  pageCount: 900
                 }
               };
 
