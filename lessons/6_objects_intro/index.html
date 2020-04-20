@@ -70,6 +70,7 @@
         .book-sample-img img {
             max-height: 40vh;;
         }
+
     </style>
 </head>
 
@@ -103,11 +104,11 @@
             <pre>
 					<code data-trim>
               <div class="book">
-                    <img src="goats.jpg">
+                    <img class="js-book-img" src="goats.jpg">
                     <div>
-                        <div>Name: <span>Raising goats for dummies</span></div>
-                        <div>Price: <span class="price">15 &euro;</span></div>
-                        <div>Length: <span class="pages">340 pages</span></div>
+                        <div>Name: <span class="js-book-name">Raising goats for dummies</span></div>
+                        <div>Price: <span class="price js-book-price">15 &euro;</span></div>
+                        <div>Length: <span class="pages js-book-pages">340 pages</span></div>
                     </div>
                 </div>
                 	</code>
@@ -115,7 +116,7 @@
             </div>
         </section>
 
-        <section class="">
+        <section>
             <h3>But all this information can come from elsewhere</h3>
             <p class="fragment">Lest not hard-code it in HTML</p>
             <div class="fragment">
@@ -125,13 +126,14 @@ let image = "goats.jpg";
 let pageCount = 340;
 let price = 15;
 
-document.querySelector(".book img").src = image;
-document.querySelector(".book.name").innerText = name;
-document.querySelector(".book.price").innerText = price;
-document.querySelector(".book.pages").innerText = pageCount;
+document.querySelector(".js-book-img").src = image;
+document.querySelector(".js-book-name").innerText = name;
+document.querySelector(".js-book-price").innerText = price;
+document.querySelector(".js-book-pages").innerText = pageCount;
           </code></pre>
                 <br>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank">querySelector info</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank">querySelector
+                    info</a>
             </div>
             <div class="fragment">
             </div>
@@ -145,9 +147,12 @@ document.querySelector(".book.pages").innerText = pageCount;
                     <img src="goats.jpg">
                     <img src="zombie_raccoons.jpg">
                 </div>
-                <br>
-                <div class="fragment">
-                    <pre><code data-trim>
+            </div>
+        </section>
+
+        <section>
+            <h3>Time to add a second book!</h3>
+            <pre><code data-trim>
             let title1 = "Raising goats for dummies";
             let image1 = "goats.jpg";
             let pageCount1 = 340;
@@ -157,10 +162,7 @@ document.querySelector(".book.pages").innerText = pageCount;
             let image2 = "zombie_raccoons.jpg";
             let pageCount2 = 643;
             let price2 = 20;
-          </code></pre>
-
-                </div>
-            </div>
+            </code></pre>
         </section>
 
         <section class="">
@@ -170,25 +172,6 @@ document.querySelector(".book.pages").innerText = pageCount;
 
         <section>
             <h3>OBJECTS TO THE RESCUE!!</h3>
-            <div class="fragment">
-            <pre><code data-trim>
-              let book = {
-                title: "Raising goats for dummies",
-                image: "goats.jpg",
-                pageCount: 340,
-                price: 15
-              };
-            </code></pre>
-            </div>
-            <br/>
-            <div class="fragment">
-            <pre><code data-trim>
-document.querySelector(".book img").src = book.image;
-document.querySelector(".book.name").innerText = book.name;
-document.querySelector(".book.price").innerText = book.price;
-document.querySelector(".book.pages").innerText = book.pageCount;
-            </code></pre>
-            </div>
         </section>
 
         <section>
@@ -199,16 +182,23 @@ document.querySelector(".book.pages").innerText = book.pageCount;
                 <li class="fragment">The value is like a variable itself</li>
             </ul>
             <br/>
-            <div>
-                            <pre><code>
-              let book = {
-                title: "Raising goats for dummies",
-                image: "goats.jpg",
-                pageCount: 340,
-                price: 15
-              };
-        </code></pre>
-            </div>
+
+            <pre><code>
+  const goatBook = {
+    title: "Raising goats for dummies",
+    image: "goats.jpg",
+    pageCount: 340,
+    price: 15
+  };
+
+  const zombRacBook = {
+    title: "Zombie Raccoons & Killer Bunnies",
+    image: "zombie_raccoons.jpg",
+    pageCount: 643,
+    price: 20
+  };
+                </code>
+                    </pre>
         </section>
         <section>
             <h2>What can we do with objects?</h2>
@@ -216,45 +206,44 @@ document.querySelector(".book.pages").innerText = book.pageCount;
         <section>
             <h3>Get value of it's attributes</h3>
             <pre><code data-trim>
-              let book = {
+              let goatBook = {
                 title: "Raising goats for dummies",
                 image: "goats.jpg",
                 pageCount: 340,
                 price: 15
               };
 
-          alert("Book name is " + book.title);
+          alert("Book name is " + goatBook.title);
             </code></pre>
         </section>
         <section>
             <h3>Change value of it's attributes</h3>
             <pre><code data-trim>
-              let book = {
+              let goatBook = {
                 title: "Raising goats for dummies",
                 image: "goats.jpg",
                 pageCount: 340,
                 price: 15
               };
-
-              book.pageCount = 900;
-
-              alert(book.title + " has " + book.pageCount + " pages");
+              let newPageCount =  prompt("There are " + goatBook.pageCount + " pages now, enter new page count value");
+              goatBook.pageCount = newPageCount;
+              alert(goatBook.title + " has " + goatBook.pageCount + " pages");
             </code></pre>
         </section>
 
         <section>
             <h3>And even add new attributes</h3>
             <pre><code data-trim>
-              let book = {
+              let goatBook = {
                 title: "Raising goats for dummies",
                 image: "goats.jpg",
                 pageCount: 340,
                 price: 15
               };
 
-              book.rating = "5 stars";
+              goatBook.rating = "5 stars";
 
-              alert(book.title + " book was rated with " + book.rating);
+              alert(goatBook.title + " goatBook was rated with " + goatBook.rating);
             </code></pre>
         </section>
 
