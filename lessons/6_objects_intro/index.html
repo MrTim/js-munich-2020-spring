@@ -70,6 +70,7 @@
         .book-sample-img img {
             max-height: 40vh;;
         }
+
     </style>
 </head>
 
@@ -145,9 +146,12 @@ document.querySelector(".js-book-pages").innerText = pageCount;
                     <img src="goats.jpg">
                     <img src="zombie_raccoons.jpg">
                 </div>
-                <br>
-                <div class="fragment">
-                    <pre><code data-trim>
+            </div>
+        </section>
+
+        <section>
+            <h3>Time to add a second book!</h3>
+            <pre><code data-trim>
             let title1 = "Raising goats for dummies";
             let image1 = "goats.jpg";
             let pageCount1 = 340;
@@ -157,10 +161,7 @@ document.querySelector(".js-book-pages").innerText = pageCount;
             let image2 = "zombie_raccoons.jpg";
             let pageCount2 = 643;
             let price2 = 20;
-          </code></pre>
-
-                </div>
-            </div>
+            </code></pre>
         </section>
 
         <section class="">
@@ -170,25 +171,6 @@ document.querySelector(".js-book-pages").innerText = pageCount;
 
         <section>
             <h3>OBJECTS TO THE RESCUE!!</h3>
-            <div class="fragment">
-            <pre><code data-trim>
-              let book = {
-                title: "Raising goats for dummies",
-                image: "goats.jpg",
-                pageCount: 340,
-                price: 15
-              };
-            </code></pre>
-            </div>
-            <br/>
-            <div class="fragment">
-            <pre><code data-trim>
-document.querySelector(".js-book-img").src = book.image;
-document.querySelector(".js-book-name").innerText = book.name;
-document.querySelector(".js-book-price").innerText = book.price;
-document.querySelector(".js-book-pages").innerText = book.pageCount;
-            </code></pre>
-            </div>
         </section>
 
         <section>
@@ -297,6 +279,86 @@ console.log(strangeButtonCmp.classList);
               alert(person.name + "'s favorite book is " + person.favoriteBook.name);
             </code></pre>
             </div>
+        </section>
+
+        <section>
+            <h3>Book Example</h3>
+            <div class="js-book-list"></div>
+            <script>
+              const goatBook = {
+                title: "Raising goats for dummies",
+                image: "goats.jpg",
+                pageCount: 340,
+                price: 15
+              };
+
+              const zombRacBook = {
+                title: "Zombie Raccoons & Killer Bunnies",
+                image: "zombie_raccoons.jpg",
+                pageCount: 643,
+                price: 20
+              };
+
+
+              const bookListEl = document.querySelector(".js-book-list");
+              function renderBook(book) {
+                const bookEl = document.createElement('div');
+                bookEl.innerHTML = `
+                    <div class="book">
+                        <img src="${book.image}">
+                        <div>
+                            <div>Title: ${book.title}</div>
+                            <div>Price: ${book.price} &euro;</div>
+                            <div>Length: ${book.pageCount} pages</div>
+                        </div>
+                    </div>
+                `;
+                bookListEl.appendChild(bookEl);
+              }
+
+              renderBook(goatBook);
+              renderBook(zombRacBook);
+            </script>
+        </section>
+
+        <section>
+            <h3>Book Example</h3>
+            <div class="js-book-list"></div>
+            <pre><code>
+  const goatBook = {
+    title: "Raising goats for dummies",
+    image: "goats.jpg",
+    pageCount: 340,
+    price: 15
+  };
+
+  const zombRacBook = {
+    title: "Zombie Raccoons & Killer Bunnies",
+    image: "zombie_raccoons.jpg",
+    pageCount: 643,
+    price: 20
+  };
+
+  const bookListEl = document.querySelector(".js-book-list");
+
+  function renderBook(book) {
+    const bookEl = document.createElement('div');
+    bookEl.innerHTML = `
+        <div class="book">
+            <img src="${book.image}">
+            <div>
+                <div>Title: ${book.title}</div>
+                <div>Price: ${book.price} &euro;</div>
+                <div>Length: ${book.pageCount} pages</div>
+            </div>
+        </div>
+    `;
+    bookListEl.appendChild(bookEl);
+  }
+
+  renderBook(goatBook);
+  renderBook(zombRacBook);
+            </pre></code>
         </section>
 
         <section>
