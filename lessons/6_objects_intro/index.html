@@ -103,11 +103,11 @@
             <pre>
 					<code data-trim>
               <div class="book">
-                    <img src="goats.jpg">
+                    <img class="js-book-img" src="goats.jpg">
                     <div>
-                        <div>Name: <span>Raising goats for dummies</span></div>
-                        <div>Price: <span class="price">15 &euro;</span></div>
-                        <div>Length: <span class="pages">340 pages</span></div>
+                        <div>Name: <span class="js-book-name">Raising goats for dummies</span></div>
+                        <div>Price: <span class="price js-book-price">15 &euro;</span></div>
+                        <div>Length: <span class="pages js-book-pages">340 pages</span></div>
                     </div>
                 </div>
                 	</code>
@@ -115,7 +115,7 @@
             </div>
         </section>
 
-        <section class="">
+        <section>
             <h3>But all this information can come from elsewhere</h3>
             <p class="fragment">Lest not hard-code it in HTML</p>
             <div class="fragment">
@@ -125,10 +125,10 @@ let image = "goats.jpg";
 let pageCount = 340;
 let price = 15;
 
-document.querySelector(".book img").src = image;
-document.querySelector(".book.name").innerText = name;
-document.querySelector(".book.price").innerText = price;
-document.querySelector(".book.pages").innerText = pageCount;
+document.querySelector(".js-book-img").src = image;
+document.querySelector(".js-book-name").innerText = name;
+document.querySelector(".js-book-price").innerText = price;
+document.querySelector(".js-book-pages").innerText = pageCount;
           </code></pre>
                 <br>
                 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank">querySelector info</a>
@@ -183,10 +183,10 @@ document.querySelector(".book.pages").innerText = pageCount;
             <br/>
             <div class="fragment">
             <pre><code data-trim>
-document.querySelector(".book img").src = book.image;
-document.querySelector(".book.name").innerText = book.name;
-document.querySelector(".book.price").innerText = book.price;
-document.querySelector(".book.pages").innerText = book.pageCount;
+document.querySelector(".js-book-img").src = book.image;
+document.querySelector(".js-book-name").innerText = book.name;
+document.querySelector(".js-book-price").innerText = book.price;
+document.querySelector(".js-book-pages").innerText = book.pageCount;
             </code></pre>
             </div>
         </section>
@@ -235,6 +235,8 @@ document.querySelector(".book.pages").innerText = book.pageCount;
                 pageCount: 340,
                 price: 15
               };
+
+              alert(book.title + " has " + book.pageCount + " pages");
 
               book.pageCount = 900;
 
