@@ -132,7 +132,8 @@ document.querySelector(".js-book-price").innerText = price;
 document.querySelector(".js-book-pages").innerText = pageCount;
           </code></pre>
                 <br>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank">querySelector info</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank">querySelector
+                    info</a>
             </div>
             <div class="fragment">
             </div>
@@ -181,16 +182,23 @@ document.querySelector(".js-book-pages").innerText = pageCount;
                 <li class="fragment">The value is like a variable itself</li>
             </ul>
             <br/>
-            <div>
-                            <pre><code>
-              let book = {
-                title: "Raising goats for dummies",
-                image: "goats.jpg",
-                pageCount: 340,
-                price: 15
-              };
-        </code></pre>
-            </div>
+
+            <pre><code>
+  const goatBook = {
+    title: "Raising goats for dummies",
+    image: "goats.jpg",
+    pageCount: 340,
+    price: 15
+  };
+
+  const zombRacBook = {
+    title: "Zombie Raccoons & Killer Bunnies",
+    image: "zombie_raccoons.jpg",
+    pageCount: 643,
+    price: 20
+  };
+                </code>
+                    </pre>
         </section>
         <section>
             <h2>What can we do with objects?</h2>
@@ -198,47 +206,44 @@ document.querySelector(".js-book-pages").innerText = pageCount;
         <section>
             <h3>Get value of it's attributes</h3>
             <pre><code data-trim>
-              let book = {
+              let goatBook = {
                 title: "Raising goats for dummies",
                 image: "goats.jpg",
                 pageCount: 340,
                 price: 15
               };
 
-          alert("Book name is " + book.title);
+          alert("Book name is " + goatBook.title);
             </code></pre>
         </section>
         <section>
             <h3>Change value of it's attributes</h3>
             <pre><code data-trim>
-              let book = {
+              let goatBook = {
                 title: "Raising goats for dummies",
                 image: "goats.jpg",
                 pageCount: 340,
                 price: 15
               };
-
-              alert(book.title + " has " + book.pageCount + " pages");
-
-              book.pageCount = 900;
-
-              alert(book.title + " has " + book.pageCount + " pages");
+              let newPageCount =  prompt("There are " + goatBook.pageCount + " pages now, enter new page count value");
+              goatBook.pageCount = newPageCount;
+              alert(goatBook.title + " has " + goatBook.pageCount + " pages");
             </code></pre>
         </section>
 
         <section>
             <h3>And even add new attributes</h3>
             <pre><code data-trim>
-              let book = {
+              let goatBook = {
                 title: "Raising goats for dummies",
                 image: "goats.jpg",
                 pageCount: 340,
                 price: 15
               };
 
-              book.rating = "5 stars";
+              goatBook.rating = "5 stars";
 
-              alert(book.title + " book was rated with " + book.rating);
+              alert(goatBook.title + " goatBook was rated with " + goatBook.rating);
             </code></pre>
         </section>
 
@@ -279,86 +284,6 @@ console.log(strangeButtonCmp.classList);
               alert(person.name + "'s favorite book is " + person.favoriteBook.name);
             </code></pre>
             </div>
-        </section>
-
-        <section>
-            <h3>Book Example</h3>
-            <div class="js-book-list"></div>
-            <script>
-              const goatBook = {
-                title: "Raising goats for dummies",
-                image: "goats.jpg",
-                pageCount: 340,
-                price: 15
-              };
-
-              const zombRacBook = {
-                title: "Zombie Raccoons & Killer Bunnies",
-                image: "zombie_raccoons.jpg",
-                pageCount: 643,
-                price: 20
-              };
-
-
-              const bookListEl = document.querySelector(".js-book-list");
-              function renderBook(book) {
-                const bookEl = document.createElement('div');
-                bookEl.innerHTML = `
-                    <div class="book">
-                        <img src="${book.image}">
-                        <div>
-                            <div>Title: ${book.title}</div>
-                            <div>Price: ${book.price} &euro;</div>
-                            <div>Length: ${book.pageCount} pages</div>
-                        </div>
-                    </div>
-                `;
-                bookListEl.appendChild(bookEl);
-              }
-
-              renderBook(goatBook);
-              renderBook(zombRacBook);
-            </script>
-        </section>
-
-        <section>
-            <h3>Book Example</h3>
-            <div class="js-book-list"></div>
-            <pre><code>
-  const goatBook = {
-    title: "Raising goats for dummies",
-    image: "goats.jpg",
-    pageCount: 340,
-    price: 15
-  };
-
-  const zombRacBook = {
-    title: "Zombie Raccoons & Killer Bunnies",
-    image: "zombie_raccoons.jpg",
-    pageCount: 643,
-    price: 20
-  };
-
-  const bookListEl = document.querySelector(".js-book-list");
-
-  function renderBook(book) {
-    const bookEl = document.createElement('div');
-    bookEl.innerHTML = `
-        <div class="book">
-            <img src="${book.image}">
-            <div>
-                <div>Title: ${book.title}</div>
-                <div>Price: ${book.price} &euro;</div>
-                <div>Length: ${book.pageCount} pages</div>
-            </div>
-        </div>
-    `;
-    bookListEl.appendChild(bookEl);
-  }
-
-  renderBook(goatBook);
-  renderBook(zombRacBook);
-            </pre></code>
         </section>
 
         <section>
