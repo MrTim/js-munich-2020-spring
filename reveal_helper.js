@@ -65,6 +65,9 @@
     additionalCssStyleTag.innerHTML = additionalCss;
     head.appendChild(additionalCssStyleTag);
 
+    // add redi logo
+    document.body.insertAdjacentHTML("afterbegin", `<a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo"/></a>`);
+
     $(document).ready(function () {
         Reveal.initialize({
             history: true,
