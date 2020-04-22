@@ -1,4 +1,4 @@
-# Lesson 6 Homework
+# Homework 6 -- Store
 
 Start working on your little online store prototype and practice objects and arrays
 
