@@ -1,4 +1,4 @@
-# Lesson 5 Homework
+# Homework 5 -- Recap and Practice
 
 0) Check that your repo is listed under Wiki -> Lesson 2
 1) Finish all previous homeworks
