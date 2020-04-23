@@ -1,9 +1,50 @@
 <html>
+
 <head>
-    <title>Lesson 7 Arrays</title>
+    <title>Javascript orientation session!</title>
+    <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../../reveal.js/css/theme/moon.css">
+    <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+    <style>
+        .reveal pre {
+            margin: 0;
+        }
+
+        .monospace {
+            font-family: monospace !important;
+        }
+
+        .illustration {
+            border: 0px
+        }
+
+        .reveal li {
+            margin-bottom: 0.5em;
+        }
+
+        .reveal pre {
+            width: 100%;
+        }
+
+        .reveal pre code {
+            cursor: pointer;
+        }
+
+        .reveal li pre {
+            width: fit-content;
+        }
+
+        .logo {
+            position: fixed;
+            /* Sit on top of the page content */
+            z-index: 2;
+            /* Specify a stack order in case you're using a different order for other elements */
+        }
+    </style>
 </head>
 
 <body>
+<a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo"/></a>
 <div class="reveal">
     <div class="slides">
         <section data-markdown>
@@ -195,12 +236,39 @@
 
             - [classwork.md](https://mrtim.github.io/js-munich-2020-spring/lessons/7_arrays/classwork)
             </textarea>
-        </section>
+        </section> 
     </div>
 </div>
 
 <script src="../../jquery-3.3.1.slim.min.js"></script>
-<div class="js-additional-scripts"></div>
-<script src="../../reveal_helper.js"></script>
+<script src="../../reveal.js/lib/js/head.min.js"></script>
+<script src="../../reveal.js/js/reveal.js"></script>
+<script src="../../reveal.js/plugin/markdown/marked.js"></script>
+<script>
+    Reveal.initialize({
+        history: true,
+        dependencies: [
+            {
+                src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            },
+            {
+                src: '../../reveal.js/plugin/markdown/markdown.js', 
+                async: false 
+            },
+        ]
+    });
+
+    // Make each code example executable by clicking it:
+    $(document).ready(function () {
+        $('code').click(function (event) {
+            console.info('Click!', $(this).text());
+            eval($(this).text());
+        });
+    });
+</script>
 </body>
+
 </html>
+
