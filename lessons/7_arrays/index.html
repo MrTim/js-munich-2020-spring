@@ -1,0 +1,206 @@
+<html>
+<head>
+    <title>Lesson 7 Arrays</title>
+</head>
+
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section data-markdown>
+            <textarea data-template>
+            # Lecture 7
+            ### Intro to arrays
+            </textarea>
+        </section>
+        <section>
+            <h3>Arrays</h3>
+            <ul>
+                <li>All about storing several pieces of data in one place.</li>
+                <li>They are defined with square brackets and items are separated with commas</li>
+            </ul>
+            <br/>
+            <pre class="fragment"><code data-trim>
+                const names = ["Travis", "Anna", "Ivan", "Carlyon"];
+                const speeds  = [12, 31, 115, 800, 1080, 2];
+                console.log('names:', names);
+                console.log('speeds:', speeds);
+            </code></pre>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+            ### Thinking in arrays
+
+            What can we model in our heads with arrays?
+
+            - list animals
+            - todo list
+            - seats in a car
+            </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+            ### Thinking in arrays
+
+            What about in the user interface of a website?
+
+            - menu items
+            - product tiles
+            - footer links
+
+            Many things can be modeled with arrays
+            </textarea>
+        </section>
+
+        <section>
+            <h3>Production Code example</h3>
+            <pre class="fragment"><code data-trim>
+            const menuItems = [
+                {
+                    title: t('New products'),
+                    url: getNewProductsUrl(),
+                    itemType: MenuItemType.InternalLink,
+                    highlighted: true,
+                },
+                {
+                    title: t('Hot deal'),
+                    url: config.links.looks,
+                    itemType: MenuItemType.ExternalLink,
+                    highlighted: false,
+                }
+                ...
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>What can arrays hold?</h3>
+            <ul>
+                <li>technically they can hold elements of any type including functions</li>
+                <li>you should always try to store data of the same type in an array, especially in regards to looping</li>
+                <li>More about loops in the next lesson</li>
+            </ul>
+            <br/>
+            <p>Best to avoid doing:</p>
+            <pre class="fragment"><code data-trim>
+                const myCrazyArray = ["Travis", 10, false, "Carlyon"];
+                console.log('myCrazyArray:', myCrazyArray);
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>Accessing Arrays</h3>
+            <ul>
+                <li>array elements can be accessed via their index</li>
+                <li>similar to how we access an object values with a key now we use an index</li>
+                <li>in javascript arrays indexes start at 0, so the first element is myArray[0]</li>
+            </ul>
+            <br/>
+            <pre class="fragment"><code data-trim>
+                const names = ["Travis", "Anna", "Ivan", "Carlyon"];
+                const secondName = names[1];
+                console.log('secondName:', secondName);
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>Updating Array Elements</h3>
+            <ul>
+                <li>now that we know how to access array items we can also change them</li>
+                <li>this way of changing an already created variable is called `mutation`</li>
+            </ul>
+            <br/>
+            <pre class="fragment"><code data-trim>
+                const names = ["Travis", "Anna", "Ivan", "Carlyon"];
+                names[0] = "Bob";
+                console.log('names:', names);
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>Adding to an Array</h3>
+            <ul>
+                <li>elements can be added to an array via the `.push` function</li>
+            </ul>
+            <br/>
+            <pre class="fragment"><code data-trim>
+                const names = ["Travis", "Anna", "Ivan", "Carlyon"];
+                console.log('names pre push:', names);
+                names.push("Tim");
+                console.log('name post push:', names);
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>The length property</h3>
+            <ul>
+                <li>arrays have a very useful property `length`</li>
+                <li>for example, we could use it to get the last item of an array</li>
+            </ul>
+            <br/>
+            <pre class="fragment"><code data-trim>
+                const names = ["Travis", "Anna", "Ivan", "Carlyon"];
+                const lastPerson = names[names.length - 1];
+                console.log('lastPerson:', lastPerson);
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>Remove item from array</h3>
+            <ul>
+                <li>use the array's splice method</li>
+            </ul>
+            <br/>
+            <pre class="fragment"><code data-trim>
+                const names = ["Travis", "Anna", "Ivan", "Carlyon"];
+                names.splice(2, 1);
+                console.log(names);
+            </code></pre>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+            ### array resources
+
+            There are many other things you can do with arrays then we can cover today.
+
+            - [mdn first steps with arrays](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays)
+            - [mdn array spec](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+            - [free code camp lessons on arrays](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/nest-one-array-within-another-array)
+            </textarea>
+        </section>
+
+        <section>
+            <h3>string literial review</h3>
+            <ul>
+                <li>as many of you noticed last class creating html with string literials is pretty powerful</li>
+            </ul>
+            <br/>
+            <pre class="fragment"><code data-trim>
+                const teachers = ['jim', 'bob', 'fred', 'tim'];
+                namesEl.innerHTML = `
+                <h2>Teadhers:</h2>
+                <ul>
+                    <li>${teachers[0]}</li>
+                    <li>${teachers[1]}</li>
+                    <li>${teachers[2]}</li>
+                    <li>${teachers[3]}</li>
+                </ul>
+                `;
+            </code></pre>
+        </section>
+        <section data-markdown>
+            <textarea data-template>
+            ### Class Work
+
+            - [classwork.md](https://mrtim.github.io/js-munich-2020-spring/lessons/7_arrays/classwork)
+            </textarea>
+        </section>
+    </div>
+</div>
+
+<script src="../../jquery-3.3.1.slim.min.js"></script>
+<div class="js-additional-scripts"></div>
+<script src="../../reveal_helper.js"></script>
+</body>
+</html>
