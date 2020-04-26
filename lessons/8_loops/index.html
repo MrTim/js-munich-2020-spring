@@ -67,8 +67,8 @@
             </h4>
           </ul>
           <pre class="fragment"><code data-trim class="hljs">
-                const items = ["Item 01", "Item 02", "Item 03", "Item 04"];
-                console.log(items[0]);
+                const colors = ["Red", "Blue", "Green", "Yellow"];
+                console.log(colors[0]);
 
                 const cars = [{
                     name: "Fiat",
@@ -86,16 +86,17 @@
 
         <section>
           <h5>
-            Now, you need to show all the items that you have store in your array
+            Now, you need to show all the items that you have stored in your array
           </h5>
           <pre
             class="fragment"
           ><code data-trim  class="hljs">
-                const items = ["Item 01", "Item 02", "Item 03", "Item 04"];
-                console.log(items[0]);
-                console.log(items[1]);
-                console.log(items[2]);
-                console.log(items[3]);
+                const colors = ["Red", "Blue", "Green", "Yellow"];
+
+                console.log(colors[0]);
+                console.log(colors[1]);
+                console.log(colors[2]);
+                console.log(colors[3]);
             </code></pre>
         </section>
 
@@ -106,26 +107,27 @@
           <img src="./noo.gif" width="180" height="130" />
           <br />
           <pre class="fragment"><code data-trim class="hljs">
-                const items = ["Item 1", "Item 2", "Item 3", ..., "Item 30"];
-                console.log(items[0]);
-                console.log(items[1]);
+                const colors = ["Red", "Blue", "Green",...,"Purple"];
+
+                console.log(colors[0]);
+                console.log(colors[1]);
                 .
                 .
                 .
-                console.log(items[29]);
+                console.log(colors[15]);
             </code></pre>
         </section>
 
         <section>
-          <h3>Don't worry exist a better solution for that!! 🎉</h2>
+          <h3>Don't worry, there exists a better solution for that!! 🎉</h2>
           <h1 class="fragment">LOOPS</h3>
         </section>
 
         <section>
-            <h3>What is Loops?</h3>
+            <h3>What are Loops?</h3>
           <ul>
             <li>
-             Loops is mainly used for iterating over arrays or objects if you have to run the same code several times.
+             Loops are mainly used for iterating over arrays or objects if you have to run the same code several times.
             </li>
              
           </ul>
@@ -133,22 +135,23 @@
   
         <section>
             <pre><code data-trim class="" >
-                const items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7"];
+                const colors = ["Red", "Blue", "Green","Yellow", "Orange", "Purple", "Pink"];
+
                 //to print the items always is running items[0] -> just the index is changing
-                console.log(items[0]);  // index: 0
-                console.log(items[1]);  // index: 1
-                console.log(items[2]);  // index: 2
-                console.log(items[3]);  // index: 3
-                console.log(items[4]);  // index: 4
-                console.log(items[5]);  // index: 5
-                console.log(items[6]);  // index: 6
+                console.log(colors[0]);  // index: 0
+                console.log(colors[1]);  // index: 1
+                console.log(colors[2]);  // index: 2
+                console.log(colors[3]);  // index: 3
+                console.log(colors[4]);  // index: 4
+                console.log(colors[5]);  // index: 5
+                console.log(colors[6]);  // index: 6
             </code></pre>
             <br/>
             <h2 class="fragment">Solution</h2>
             <pre class="fragment"><code data-trim class="hljs">
-                const items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7"];
-                for (let i = 0; i < items.length; i++) {
-                    console.log(items[i]);
+                const colors = ["Red", "Blue", "Green","Yellow", "Orange", "Purple", "Pink"];
+                for (let i = 0; i < colors.length; i++) {
+                    console.log(colors[i]);
                 }
             </code></pre>
         </section>
@@ -167,7 +170,7 @@
                 <ol>
                     <li class="fragment"><b><i>let i= 0:</i></b> Initializes the counter variable i.</li>
                     <li class="fragment"><b><i>i < 10:</i></b> Defines the condition for executing the code block.</li>
-                    <li class="fragment"><b><i>i++:</i></b> updates the loop counter (i) with a new value each time the loop runs.</li>
+                    <li class="fragment"><b><i>i++:</i></b> Increments the loop counter (i) each time the loop runs.</li>
                 </ol>
             </div>
        </section>
@@ -182,35 +185,36 @@
             </code></pre>
             <br/>
             <div class="fragment">
-                <h4>Print list of items</h4>
+                <h4>Print list of color</h4>
                 <pre><code data-trim class="hljs">
-                    const items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7"];
-                    for (let i = 0; i < items.length; i++) {
-                        console.log(items[i]);
+                    const colors = ["Red", "Blue", "Green","Yellow", "Orange", "Purple", "Pink"];
+                    
+                    for (let i = 0; i < colors.length; i++) {
+                        console.log(colors[i]);
                     }
                 </code></pre>
             </div>
        </section>
 
        <section>
-           <h4>Print students' full name.</h4>
+           <h4>Print teachers' full name.</h4>
            <pre><code data-trim class="hljs">
-                const students = [{
+                const teachers = [{
+                    name: "Travis",
+                    lastname: "Shears"
+                },{
                     name: "Anna",
-                    lastname: "Danielkiewicz"
+                    lastname: "Berezhkova"
                 },{
-                    name: "Sergei",
-                    lastname: "Golovnev"
+                    name: "Tobias",
+                    lastname: "Timm"
                 },{
-                    name: "Natalia",
-                    lastname: "Gubanova"
-                },{
-                    name: "Sadat",
-                    lastname: "Rashid"
+                    name: "Ivan",
+                    lastname: "Tomofeev"
                 }];
 
-                for (let i = 0; i < students.length; i++) {
-                    console.log(`Student ${i + 1}: ${students[i].name} ${students[i].lastname}`)
+                for (let i = 0; i < teachers.length; i++) {
+                    console.log(`Teacher ${i + 1}: ${teachers[i].name} ${teachers[i].lastname}`)
                 }
             </code></pre>
        </section>
@@ -246,16 +250,29 @@
        <section>
            <h3>Array Iteration Methods</h3>
            <ul>
-                <li>Array.forEach()</li>
-                <pre><code data-trim class="hljs">
-                    const numbers = [45, 4, 9, 16, 25];
-                    numbers.forEach(function(number) {
-                        console.log(number);
-                    });
-                </code></pre>
-            <li>Array.map()</li>
-            <li>Array.filter()</li>
-            <li>Array.reduce()</li>
+              <li>Array.forEach(): Calls a function once for each array element.</li>
+              <pre><code data-trim class="hljs">
+                const numbers = [45, 4, 9, 16, 25];
+                numbers.forEach(function(number) {
+                    console.log(number);
+                });
+              </code></pre>
+              <li>Array.map(): Creates a new array with the result of the function on every element of the array.</li>
+              <pre><code data-trim class="hljs">
+                const numbers = [1, 4, 9, 16];
+                const result = numbers.map(function(number) {
+                                return number * 2
+                               });
+                console.log(result)
+              </code></pre>
+              <li>Array.filter(): creates a new array with array elements that passes a condition.</li>
+              <pre><code data-trim class="hljs">
+                const numbers = [1, 4, 9, 16];
+                const result = numbers.filter(function(number) {
+                                  return number > 5
+                               });
+                console.log(result)
+              </code></pre>
             <a href="https://www.w3schools.com/js/js_array_iteration.asp" target="_blank">More array methods..</a>
            </ul>
         </section>
