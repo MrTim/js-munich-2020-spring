@@ -75,17 +75,20 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 - Homework:
   - start creating online store page with some goods
 
+## [Lesson 7 - arrays + random wikipedia articles](https://mrtim.github.io/js-munich-2020-spring/lessons/7_arrays)
+
+- what are arrays
+- how to create them
+- how to add to them
+- updateing them
+- the length property
+- how to remove an item
+- thinking in arrays
+- classwork: playing with random wikipedia articles 📜
+
 ## Next Meets
 
-- 6th: mini calc
-  - with this new page use inputs and update elements with the text you type in them
-  - grab value from input then set text content of div
-  - mini calc <input> + <input> = <div>
-  - type casting string to int...
-  - functions with arguments and return statements
-- 7th: logic stuffs
-- 8th: array stuffs
-- 9th: loops
+- 8th: loops
 - 10th: objects as struct
 - 11th: objects with functions
 
