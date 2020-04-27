@@ -86,7 +86,7 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 - thinking in arrays
 - classwork: playing with random wikipedia articles 📜
 
-## [Lesson 8 - loops](https://mrtim.github.io/js-munich-2020-spring/lessons/8_loops)
+## [Lesson 8 - loops](https://mrtim.github.io/js-munich-2020-spring/lessons/8_loops/#/)
 
 - review objects and arrays.
 - what are loops.
