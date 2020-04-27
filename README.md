@@ -86,11 +86,19 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 - thinking in arrays
 - classwork: playing with random wikipedia articles 📜
 
+## [Lesson 8 - loops](https://mrtim.github.io/js-munich-2020-spring/lessons/8_loops)
+
+- review objects and arrays.
+- what are loops.
+- For loop structure.
+- Examples using for loop.
+- Array iteration methods.
+- classwork: Shopping Store.
+
 ## Next Meets
 
-- 8th: loops
-- 10th: objects as struct
-- 11th: objects with functions
+- 9th: functions
+- 10th: conditionals
 
 ## Additional Ideas
 

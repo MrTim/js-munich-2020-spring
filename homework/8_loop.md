@@ -8,13 +8,11 @@ Start working on your little online store prototype and practice objects, arrays
 
 We going to refactor and add some extra functionalities to your online store.
 
-1. [Refactor] Store your objects in an array.
-2. [Refactor] Display all your objects on a web-page using loops.
-3. [Feature] Add an "Add to shopping cart" button in each product.
-4. [Feature] Save each product when that the user clicks on "Add to shopping car" button in an array and the button should be disabled once the user add the product in the shopping cart.
-5. [Feature] Add "Show shopping cart" button.
-6. [Feature] Display the list of products saved in the shopping cart when the user clicks on "Show shopping cart list" button.
-7. [Feature] Display the total price of your shoping card.
+1. Add an "Add to shopping cart" button in each product.
+2. Save each product when that the user clicks on "Add to shopping car" button in an array and the button should be disabled once the user add the product in the shopping cart.
+3. Add "Show shopping cart" button.
+4. Display the list of products saved in the shopping cart when the user clicks on "Show shopping cart list" button.
+5. Display the total price of your shoping card.
 
 # Deadline
 
