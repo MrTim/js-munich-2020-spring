@@ -1,0 +1,317 @@
+<html>
+  <head>
+    <title>Javascript orientation session!</title>
+    <link rel="stylesheet" href="../../reveal.js/css/reveal.css" />
+    <link rel="stylesheet" href="../../reveal.js/css/theme/moon.css" />
+    <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css" />
+    <style>
+      .reveal pre {
+        margin: 0;
+      }
+
+      .monospace {
+        font-family: monospace !important;
+      }
+
+      .illustration {
+        border: 0px;
+      }
+
+      .reveal li {
+        margin-bottom: 0.5em;
+      }
+
+      .reveal pre {
+        width: 100%;
+      }
+
+      .reveal pre code {
+        cursor: pointer;
+        max-height: 600px;
+      }
+
+      .reveal li pre {
+        width: fit-content;
+      }
+
+      .logo {
+        position: fixed;
+        /* Sit on top of the page content */
+        z-index: 2;
+        /* Specify a stack order in case you're using a different order for other elements */
+      }
+    </style>
+  </head>
+
+  <body>
+    <a href="https://www.redi-school.org/"
+      ><img src="../../redi-school-logo.jpg" class="logo"
+    /></a>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown>
+          <textarea data-template>
+            # Lecture 8
+            ### Loops
+            </textarea
+          >
+        </section>
+
+        <section>
+          <ul>
+            <h4>
+              Last week we learned about
+              <strong>Arrays</strong>
+              and
+              <strong>Objects</strong>
+            </h4>
+          </ul>
+          <pre class="fragment"><code data-trim class="hljs">
+                const colors = ["Red", "Blue", "Green", "Yellow"];
+                console.log(colors[0]);
+
+                const cars = [{
+                    name: "Fiat",
+                    model: "IV-MODEL",
+                    color: "white" 
+                },{
+                    name: "Mercedes-Benz",
+                    model: "MOTORWAGEN 1886",
+                    color: "red"
+                }];
+                console.log('Car:', cars[1]);
+                console.log('Car Name:', cars[1].name);
+            </code></pre>
+        </section>
+
+        <section>
+          <h5>
+            Now, you need to show all the items that you have stored in your array
+          </h5>
+          <pre
+            class="fragment"
+          ><code data-trim  class="hljs">
+                const colors = ["Red", "Blue", "Green", "Yellow"];
+
+                console.log(colors[0]);
+                console.log(colors[1]);
+                console.log(colors[2]);
+                console.log(colors[3]);
+            </code></pre>
+        </section>
+
+        <section>
+          <h5>
+            BUT... what happend if the array have 30 or even more items 🤯
+          </h5>
+          <img src="./noo.gif" width="180" height="130" />
+          <br />
+          <pre class="fragment"><code data-trim class="hljs">
+                const colors = ["Red", "Blue", "Green",...,"Purple"];
+
+                console.log(colors[0]);
+                console.log(colors[1]);
+                .
+                .
+                .
+                console.log(colors[15]);
+            </code></pre>
+        </section>
+
+        <section>
+          <h3>Don't worry, there exists a better solution for that!! 🎉</h2>
+          <h1 class="fragment">LOOPS</h3>
+        </section>
+
+        <section>
+            <h3>What are Loops?</h3>
+          <ul>
+            <li>
+             Loops are mainly used for iterating over arrays or objects if you have to run the same code several times.
+            </li>
+             
+          </ul>
+        </section>
+  
+        <section>
+            <pre><code data-trim class="" >
+                const colors = ["Red", "Blue", "Green","Yellow", "Orange", "Purple", "Pink"];
+
+                //to print the items always is running items[0] -> just the index is changing
+                console.log(colors[0]);  // index: 0
+                console.log(colors[1]);  // index: 1
+                console.log(colors[2]);  // index: 2
+                console.log(colors[3]);  // index: 3
+                console.log(colors[4]);  // index: 4
+                console.log(colors[5]);  // index: 5
+                console.log(colors[6]);  // index: 6
+            </code></pre>
+            <br/>
+            <h2 class="fragment">Solution</h2>
+            <pre class="fragment"><code data-trim class="hljs">
+                const colors = ["Red", "Blue", "Green","Yellow", "Orange", "Purple", "Pink"];
+                for (let i = 0; i < colors.length; i++) {
+                    console.log(colors[i]);
+                }
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>For Loop structure</h3>
+            <pre><code data-trim class="hljs">
+                for (let i = 0; i < 10; i++) {
+                  // code block to be executed
+                }
+                for ([1. initialization]; [2. condition]; [3. increment]){
+                  // code block to be executed
+                }
+            </code></pre>
+            <div>
+                <ol>
+                    <li class="fragment"><b><i>let i= 0:</i></b> Initializes the counter variable i.</li>
+                    <li class="fragment"><b><i>i < 10:</i></b> Defines the condition for executing the code block.</li>
+                    <li class="fragment"><b><i>i++:</i></b> Increments the loop counter (i) each time the loop runs.</li>
+                </ol>
+            </div>
+       </section>
+
+       <section>
+           <h3>Examples</h3>
+            <h4>Print numbers from 1 to 20</h4>
+           <pre><code data-trim class="hljs">
+                for (let i = 0; i < 20; i++) {
+                    console.log(i + 1)
+                }
+            </code></pre>
+            <br/>
+            <div class="fragment">
+                <h4>Print list of color</h4>
+                <pre><code data-trim class="hljs">
+                    const colors = ["Red", "Blue", "Green","Yellow", "Orange", "Purple", "Pink"];
+                    
+                    for (let i = 0; i < colors.length; i++) {
+                        console.log(colors[i]);
+                    }
+                </code></pre>
+            </div>
+       </section>
+
+       <section>
+           <h4>Print teachers' full name.</h4>
+           <pre><code data-trim class="hljs">
+                const teachers = [{
+                    name: "Travis",
+                    lastname: "Shears"
+                },{
+                    name: "Anna",
+                    lastname: "Berezhkova"
+                },{
+                    name: "Tobias",
+                    lastname: "Timm"
+                },{
+                    name: "Ivan",
+                    lastname: "Timofeev"
+                }];
+
+                for (let i = 0; i < teachers.length; i++) {
+                    console.log(`Teacher ${i + 1}: ${teachers[i].name} ${teachers[i].lastname}`)
+                }
+            </code></pre>
+       </section>
+
+       <section>
+           <h4>Render 4 buttons in your screen</h4>
+           [1] [2] [3] [4]
+           <pre><code data-trim class="">
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8"&gt;
+                        &lt;title&gt;Button&lt;/title&gt;
+                    &lt;/head&gt;
+                
+                    &lt;body&gt;
+                        &lt;p&gt;Buttons&lt;/p&gt;
+                        &lt;div id="container"&gt;&lt;/div&gt;
+
+                        &lt;script&gt;
+                            const buttonsContainer = document.getElementById('container');
+                            for(let i=0; i < 4; i++) {
+                                const buttonElement = document.createElement('button');
+                                buttonElement.innerText = i + 1;
+                                buttonsContainer.appendChild(buttonElement)
+                            }
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+           </code></pre>
+       </section>
+
+       <section>
+           <h3>Array Iteration Methods</h3>
+           <ul>
+              <li>Array.forEach(): Calls a function once for each array element.</li>
+              <pre><code data-trim class="hljs">
+                const numbers = [45, 4, 9, 16, 25];
+                numbers.forEach(function(number) {
+                    console.log(number);
+                });
+              </code></pre>
+              <li>Array.map(): Creates a new array with the result of the function on every element of the array.</li>
+              <pre><code data-trim class="hljs">
+                const numbers = [1, 4, 9, 16];
+                const result = numbers.map(function(number) {
+                                return number * 2
+                               });
+                console.log(result)
+              </code></pre>
+            <a href="https://www.w3schools.com/js/js_array_iteration.asp" target="_blank">More array methods..</a>
+           </ul>
+        </section>
+        <section>
+            <h3>Class work</h3>
+            <a href="https://mrtim.github.io/js-munich-2020-spring/lessons/8_loops/classwork">
+                Instructions here
+            </a>
+        </section>
+        <section>
+            <h3>Homework</h3>
+            <a href="https://mrtim.github.io/js-munich-2020-spring/homework/8_loops">
+                Instructions here
+            </a>
+        </section>
+      </div>
+    </div>
+
+    <script src="../../jquery-3.3.1.slim.min.js"></script>
+    <script src="../../reveal.js/lib/js/head.min.js"></script>
+    <script src="../../reveal.js/js/reveal.js"></script>
+    <script src="../../reveal.js/plugin/markdown/marked.js"></script>
+    <script>
+      Reveal.initialize({
+        history: true,
+        dependencies: [
+          {
+            src: '../../reveal.js/plugin/highlight/highlight.js',
+            async: false,
+            callback: function () {
+              hljs.initHighlightingOnLoad();
+            },
+          },
+          {
+            src: '../../reveal.js/plugin/markdown/markdown.js',
+            async: false,
+          },
+        ],
+      });
+
+      // Make each code example executable by clicking it:
+      $(document).ready(function () {
+        $('code').click(function (event) {
+          console.info('Click!', $(this).text());
+          eval($(this).text());
+        });
+      });
+    </script>
+  </body>
+</html>
