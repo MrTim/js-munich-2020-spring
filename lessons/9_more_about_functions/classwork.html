@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speed calculator</title>
+</head>
+<body>
+  <input type="number" placeholder="Distance" id="distance">
+  <input type="number" placeholder="Time" id="time">
+  <button type="submit" id="calculate">Calculate speed</button>
+  <div id="result"></div>
+
+  <script>
+    function createHtmlStructure(distance, time, speed) {
+      return `
+        <div>
+          <div>Given data: distance=${distance}, time=${time}</div>
+          <div>Speed of a car is: ${speed}km/h</div>
+        </div>
+      `;
+    }
+
+    function calculateSpeed(distance, time) {
+      return distance/time;
+    }
+
+    function getUserInput() {
+      const distance = document.getElementById('distance').value;
+      const time = document.getElementById('time').value;
+
+      return {
+        distance, time
+      };
+    }
+
+    function calculateClickHandler() {
+      const userInput = getUserInput();
+      const speed = calculateSpeed(userInput.distance, userInput.time);
+
+      document.getElementById('result').innerHTML = createHtmlStructure(
+        userInput.distance, userInput.time, speed
+      )
+    }
+
+    document.getElementById('calculate').addEventListener('click', calculateClickHandler);
+  </script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<html>
+
+<head>
+	<title>Lesson 9</title>
+	<link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="../../reveal.js/css/theme/moon.css">
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+	<style>
+		b {
+			background-color: #ad0170;
+		}
+
+		.reveal pre {
+			margin: 0;
+		}
+
+		.monospace {
+			font-family: monospace !important;
+		}
+
+		.illustration {
+			border: 0px
+		}
+
+		.reveal li {
+			margin-bottom: 0.5em;
+		}
+
+		.reveal pre {
+			width: 100%;
+		}
+
+		.reveal pre code {
+			cursor: pointer;
+		}
+
+		.reveal li pre {
+			width: fit-content;
+		}
+
+		.logo {
+			position: fixed;
+			/* Sit on top of the page content */
+			z-index: 2;
+			/* Specify a stack order in case you're using a different order for other elements */
+		}
+	</style>
+</head>
+
+<body>
+	<a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Lecture</h1>
+				<h3>More about function</h3>
+			</section>
+			<section>
+				<h3>What we would cover?</h3>
+				<ul>
+					<li class="fragment">Function parameters and arguments</li>
+					<li class="fragment">Return statement</li>
+					<li class="fragment">Callback?</li>
+					<li class="fragment">Practice</li>
+				</ul>
+			</section>
+			<section>
+				<h4>So far we wrote functions in the following way</h4>
+				<pre>
+					<code>
+function buttonClickHandler() {
+  const btnEl = document.getElebentById('importantBtn');
+  btnEl.innerHtml = 'No it is not so important';
+}
+					</code>
+				</pre>
+				<p>This function is good but we can't reuse it<p>
+			</section>
+			<section>
+				<h3>Let's look at this example</h3>
+				<p>We want to calculate the distance based on a <b>speed</b> and <b>time</b></p>
+				<pre class="fragment">
+					<code>
+function calculateDistance() {
+	let speed = 60;
+	let time = 2;
+	alert("Distance is: " + speed * time);
+}
+calculateDistance();
+					</code>
+				</pre>
+				<ul class="fragment">
+					<li>Speed and time always the same</li>
+					<li>We can only alert the distance</li>
+				</ul>
+			</section>
+			<section>
+				<h3>But we can improve!</h3>
+			</section>
+			<section>
+				<h3>Function parameters</h3>
+				<p class="fragment"><b>Parameters</b> are like variable boxes which you can use inside function</p>
+				<h5 class="fragment">Syntax</h5>
+				<pre class="fragment">
+					<code>
+function yourFunctionName(parameter1, parameter2) {
+  // inside you can use them with theis names
+}
+yourFunctionName(valueForArgument1, valueForArgument2);
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Lets change our distance calculator</h3>
+				<pre class="fragment">
+					<code>
+function calculateDistance() {
+	let speed = 60;
+	let time = 2;
+	alert("Distance is: " + speed * time);
+}
+calculateDistance();
+					</code>
+				</pre>
+				<pre class="fragment">
+					<code>
+function calculateDistance(speed, time) {
+	alert("Distance is: " + speed * time);
+}
+calculateDistance(60, 2);
+calculateDistance(100, 3);
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>We've seen function arguments before</h3>
+				<ul>
+					<li class="fragment">alert('Hello there!')</li>
+					<li class="fragment">prompt('How old are you?')</li>
+					<li class="fragment">btnEl.addEventListener('click', yourClickHandler)</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Order metters!</h3>
+				<p>Arguments should be provided in correct order</p>
+				<pre>
+					<code>
+calculateDistance(60, 2);  // speed = 60, time = 2
+calculateDistance(3, 100); // speed = 3, time = 100
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Now we have this function</h3>
+				<pre>
+					<code>
+function calculateDistance(speed, time) {
+  alert("Distance is: " + speed * time);
+}
+calculateDistance(60, 2);
+calculateDistance(100, 3);
+					</code>
+				</pre>
+				<p>Now we can reuse our function with <b>different</b> values of <b>speed</b> and <b>time</b>!</p>
+				<p class="fragment">But still we can only alert the result :(</p>
+			</section>
+			<section>
+				<h3>Return statement</h3>
+				<p class="fragment"><b>return</b> statement stops the execution of a function and returns some value back</p>
+				<h5 class="fragment">Syntax</h5>
+				<pre class="fragment">
+					<code>
+function yourFunctionName(argument1, argument2) {
+  let result = argument1 + argument2; // or any other operations
+  return result;
+}
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Now our function looks like this</h3>
+				<pre>
+					<code>
+function calculateDistance(speed, time) {
+	const distance = speed * time;
+	return distance;
+}
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>How do we use it?</h3>
+				<div class="fragment">
+					<pre>
+						<code>
+function calculateDistance(speed, time) {
+	const distance = speed * time;
+	return distance;
+}
+
+const distance = calculateDistance(60, 2);
+alert(distance);
+console.log(`In console: ${distance}`);
+
+// or in another example
+alert(calculateDistance(60, 2) + calculateDistance(200, 2))
+						</code>
+					</pre>
+				</div>
+			</section>
+			<section>
+				<h3>We can pass a <b>function</b> as an argument</h3>
+				<h5 class="fragment">and that function would be a <b>callback</b></h5>
+			</section>
+			<section>
+				<p>Let's create another function</p>
+				<pre>
+					<code>
+function outputDistance(distance, callback) {
+  let sentence = "Distance to the Alps is equal to: " + distance;
+  callback(sentence);
+}
+
+outputDistance('100KM', alert);
+					</code>
+				</pre>
+				which is the same as
+				<pre>
+					<code>
+function outputDistance(distance) {
+  alert(distance);
+}
+
+outputDistance('100KM');
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Class work</h3>
+				<a href="https://mrtim.github.io/js-munich-2020-spring/lessons/9_more_about_functions/classwork">
+					Instructions here
+				</a>
+			</section>
+		</div>
+	</div>
+
+	<script src="../../jquery-3.3.1.slim.min.js"></script>
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			history: true,
+			dependencies: [
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () { hljs.initHighlightingOnLoad(); } },
+			]
+		});
+
+		// Make each code example executable by clicking it:
+		$(document).ready(function () {
+			$('code').click(function (event) {
+				console.info('Click!', $(this).text());
+				eval($(this).text());
+			});
+		});
+	</script>
+</body>
+
+</html>
