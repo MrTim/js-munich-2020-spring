@@ -95,9 +95,15 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 - Array iteration methods.
 - classwork: Shopping Store.
 
+## [Lesson 9 - more about functions](https://mrtim.github.io/js-munich-2020-spring/lessons/9_more_about_functions/#/)
+
+- function parameters and arguments.
+- return statement.
+- callback.
+- classwork: converters and speed calculator.
+
 ## Next Meets
 
-- 9th: functions
 - 10th: conditionals
 
 ## Additional Ideas
