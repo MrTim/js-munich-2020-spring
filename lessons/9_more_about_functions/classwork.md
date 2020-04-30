@@ -27,3 +27,8 @@ Build a car speed calculator with following properties:
 Build a converted from <b>Celsius</b> to <b>Fahrenheit</b>
 Formula: <b>(C * 9/5) + 32</b>
 User should be able to imput a value in Celsius.
+
+## Bonus
+
+Continue to work with books store example from previous lessons. Create a possibility for a user to add books into the store.
+For that you would need some input fields (to enter book name, author, year and price for ex.), button and some functions to work with this data. Use all your knowlage from all lessons.
