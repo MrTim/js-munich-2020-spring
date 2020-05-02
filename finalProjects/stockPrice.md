@@ -4,7 +4,7 @@
 Idea of this final project is to build a simple application which would be able to search and check real stock prices.
 
 As an idea it could looks like this:
-TODO: pit picture here
+![previvew](stockprice-preview.png)
 
 Overview what it capable of:
 TODO: is it possible to put video here?
