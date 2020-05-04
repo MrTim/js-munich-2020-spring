@@ -16,7 +16,7 @@ We going to add some extra functionality to your online store.
 6. Make sure that all 4 cases are covered (n>3, 3>=n>1, n==1, n<1)
 
 Bonus:
-Link amount functionality to 'add to cart' function. Change mount dynamically when product is added to cart.
+Link amount functionality to 'add to cart' function. Change amount dynamically when product is added to cart.
 
 
 # Deadline
