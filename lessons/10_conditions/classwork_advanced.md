@@ -49,3 +49,12 @@ json linting built in. Though you are free to send the POST request however you 
 1. now in the browser via your js make a GET request to `student-store.travisshears.xyz/store/<your-token-here>`
 
 1. You should now have the data needed to render your store
+
+## Bonus
+
+Add a buy now button next to each product and when a user clicks the button make a request to the api to "buy" the product.
+
+- render stock of each item in it's product card
+- endpoint: `student-store.travisshears.xyz/buy/<sku>?token=<token>`
+- request type: GET
+- rerender the page after this with the updated stock displayed
