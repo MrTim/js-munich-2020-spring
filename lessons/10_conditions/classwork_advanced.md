@@ -6,7 +6,7 @@ to access that information.
 
 ## Tools
 
-I recommend https://insomnia.rest/ for sending the api your store JSON. Its super nice interface and
+I recommend [insomnia app](https://insomnia.rest/) for sending the api your store JSON. Its super nice interface and has
 json linting built in. Though you are free to send the POST request however you wish.
 
 ## Code
