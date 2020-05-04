@@ -52,9 +52,10 @@ json linting built in. Though you are free to send the POST request however you 
 
 ## Bonus
 
-Add a buy now button next to each product and when a user clicks the button make a request to the api to "buy" the product.
+Add button to the cart to checkout that does the following:
 
-- render stock of each item in it's product card
-- endpoint: `student-store.travisshears.xyz/buy/<sku>?token=<token>`
-- request type: GET
-- rerender the page after this with the updated stock displayed
+1. buys each product via the buy endpoint
+  - endpoint: `student-store.travisshears.xyz/buy/<sku>?token=<token>`
+    - request type: GET
+2. closes the cart popup
+3. rerenders the product grid with updated stock counts
