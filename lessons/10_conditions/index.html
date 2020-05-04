@@ -73,13 +73,13 @@
 					<li class="fragment">You have just joined the Avengers team</li>
 					<li class="fragment">Time to greet all your new team mates</li>
 					<li class="fragment"><pre><code data-trim>
-						let name = "Spider-Man";
+						const name = "Spider-Man";
 						alert("Hi " + name + "!");</code></pre>
 					</li>
 					<li class="fragment"><b>Challenge:</b> Do not reveal super-hero names when not on a mission</li>
 					<li class="fragment"><pre><code data-trim>
-						let realName = "Peter Parker"
-						let heroName = "Spider-Man";
+						const realName = "Peter Parker"
+						const heroName = "Spider-Man";
 						alert("Hi " + ??? + "!");</code></pre>
 					</li>
 				</ul>
@@ -110,8 +110,8 @@
 					<li class="fragment">
 					<pre><code data-trim>
 						function greetOnlyMe(){
-						let name = prompt("What is your name");
-						if (name==="Anna") {
+						const name = prompt("What is your name");
+						if (name === "Anna") {
 							alert("Hi Anna!");
 						}}
 						greetOnlyMe();
@@ -128,7 +128,7 @@
 					<li class="fragment">If answer is "no", say hi with real name</li>
 					<li class="fragment">
 					<pre><code data-trim>
-						let onMission = prompt("Are we on a mission?");
+						const onMission = prompt("Are we on a mission?");
 						if(){
 							alert();
 						}
@@ -145,12 +145,12 @@
 					<li class="fragment">
 					<pre><code data-trim>
 						function greetHero() {
-						let heroName = "Rocket Raccoon"
-						let realName = "Peter Quill's pet";
-						let onMission = prompt("Are we on a mission?");
-						if(onMission==="yes"){
+						const heroName = "Rocket Raccoon"
+						const realName = "Peter Quill's pet";
+						const onMission = prompt("Are we on a mission?");
+						if(onMission === "yes"){
 							alert("Hey there, " + heroName + " 👋");
-						}else if(onMission==="no"){
+						}else if(onMission === "no"){
 							alert("Hey there, " + realName + " 👋");
 						} else {
 							alert("Hey there, cute fluffy creature 👋");
@@ -169,9 +169,9 @@
 					<li class="fragment">
 					<pre><code data-trim>
 						function getFavouritePet(pet){
-							if(pet==="dog"){
+							if(pet === "dog"){
 								alert("I ❤ dogs");
-							}else if(pet==="cat"){
+							}else if(pet === "cat"){
 								alert("I ❤ cats");
 							}else {
 								alert("I ❤ goats");
@@ -182,9 +182,9 @@
 					<li class="fragment">
 					<pre><code data-trim>
 						function getFavouritePet(pet){
-							if(pet==="dog"){
+							if(pet === "dog"){
 								alert("I ❤ dogs");
-							}else if(pet==="cat"){
+							}else if(pet === "cat"){
 								alert("I ❤ cats");
 							}else {
 								alert("I ❤ goats");
@@ -200,7 +200,7 @@
 					<li class="fragment">
 					<pre><code data-trim>
 						function getFavouritePet(pet){
-							if(pet==="dog"){
+							if(pet === "dog"){
 								alert("I ❤ dogs");
 							}else if (pet == "cat"){
 								alert("I ❤ cats");
@@ -209,33 +209,6 @@
 							}
 						}
 						getFavouritePet("cat");
-					</code></pre>
-					</li>
-				</ul>
-			</section>
-			<section>
-				<h3>Introducing <code>return</code> statement</h3>
-				<ul>
-					<li class="fragment">Can you explain this magic?</li>
-					<li class="fragment">
-					<pre><code data-trim>
-						let someValue = prompt("Enter some text")
-						alert(someValue);
-					</code></pre>
-					</li>
-					<li class="fragment">A function can <code>return</code> you a value</li>
-					<li class="fragment">
-					<pre><code data-trim>
-						let bestPet = prompt("What is the best pet ever?")
-						let textToDisplay = getFavouritePet(bestPet);
-						function getFavouritePet(pet){
-							if(pet==="dog"){
-								return "I ❤ dogs";
-							}else {
-								return "I ❤ goats anyway";
-						}}
-
-						alert(textToDisplay);
 					</code></pre>
 					</li>
 				</ul>
@@ -305,16 +278,16 @@
 				<h3>Here is my solution</h3>
 				<div class="fragment">
 					<pre><code data-trim>
-						let heroName = "Rocket Raccoon"
-						let realName = "Peter Quill's pet";
-						greetHero(aa, bb)
-						function greetHero(aa, bb) {
+						const heroName = "Rocket Raccoon"
+						const realName = "Peter Quill's pet";
+						greetHero(heroName, realName)
+						function greetHero(heroName, realName) {
 						switch(prompt("Are we on a mission?")){
 						case "yes":
-							alert("Hey there, " + aa + " 👋");
+							alert("Hey there, " + heroName + " 👋");
 							break;
 						case "no":
-							alert("Hey there, " + bb + " 👋");
+							alert("Hey there, " + realName + " 👋");
 							break;
 						default:
 							alert(aa + bb);
@@ -326,12 +299,12 @@
 				<h3>So what we know so far</h3>
 				<ul>
 					<li class="fragment"><pre><code data-trim>
-						let name = "Peter";
+						const name = "Peter";
 						alert("Hi " + name + "!");</code></pre>
 					</li>
 					<li class="fragment"><pre><code data-trim>
 					function greetSpiderMan(onMission){
-						if(onMission==="yes"){
+						if(onMission === "yes"){
 							return "SpiderMan"
 						}else {
 							return "Peter"
@@ -343,8 +316,8 @@
 					<li class="fragment"><pre><code data-trim>
 					function greetSpiderMan(onMission){
 						switch(onMission){
-							case "yes": return "SpiderMan"; break;
-							case "no": return "Peter"; break;
+							case "yes": return "SpiderMan";
+							case "no": return "Peter";
 						}
 					}
 					alert("Hi " + greetSpiderMan("yes"));
@@ -366,7 +339,7 @@
 				<p class="fragment">So far, we can only check for equality, e.g.</p>
 				<span class="fragment">
 					<pre><code data-trim>
-						let age = prompt("What's your age?");
+						const age = prompt("What's your age?");
 						if (age === 19) {
 							// Old enough! But what about 20? 21?
 						}
@@ -461,9 +434,9 @@
 				<h3>What we finally know</h3>
 				<span class="fragment"><pre><code data-trim>
 					function greetSpiderMan(onMission, age){
-						if(onMission==="yes" && age > 18){
+						if(onMission === "yes" && age > 18){
 							return "SpiderMan"
-						}else if(onMission==="yes") {
+						}else if(onMission === "yes") {
 							return "Mr SpiderMan"
 						}else {
 							return "Peter"
