@@ -1,7 +1,8 @@
 # Classwork 10 Advanced Section -- Render store from API responce
 
-Hello! Today lets render practice interfacing with remote APIs via JavaScript. I've created a
-backend that you can send your store information and it provides endpoint to access that information.
+Hello! Today lets practice interfacing with remote APIs via JavaScript then render our store with
+that info. I've created a backend that you can send your store information and it provides endpoint
+to access that information.
 
 ## Tools
 
