@@ -1,0 +1,485 @@
+<html>
+
+<head>
+	<title>Lesson 10</title>
+	<link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="../../reveal.js/css/theme/moon.css">
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+	<style>
+		b {
+			background-color: #ad0170;
+		}
+
+		.reveal pre {
+			margin: 0;
+		}
+
+		.monospace {
+			font-family: monospace !important;
+		}
+
+		.illustration {
+			border: 0px
+		}
+
+		.reveal li {
+			margin-bottom: 0.5em;
+		}
+
+		.reveal pre {
+			width: 100%;
+		}
+
+		.reveal pre code {
+			cursor: pointer;
+		}
+
+		.reveal li pre {
+			width: fit-content;
+		}
+
+		.logo {
+			position: fixed;
+			/* Sit on top of the page content */
+			z-index: 2;
+			/* Specify a stack order in case you're using a different order for other elements */
+		}
+	</style>
+</head>
+
+<body>
+	<a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Lecture 10</h1>
+				<h3>Conditions</h3>
+			</section>
+			<section>
+				<h3>What we would cover?</h3>
+				<ul>
+					<li class="fragment">If else blocks</li>
+					<li class="fragment">String comparison</li>
+					<li class="fragment">Switch case blocks</li>
+					<li class="fragment">Number comparison</li>
+					<li class="fragment">Practice</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Time for a super-hero challenge 🦸</h3>
+				<ul>
+					<li class="fragment">You have just joined the Avengers team</li>
+					<li class="fragment">Time to greet all your new team mates</li>
+					<li class="fragment"><pre><code data-trim>
+						const name = "Spider-Man";
+						alert("Hi " + name + "!");</code></pre>
+					</li>
+					<li class="fragment"><b>Challenge:</b> Do not reveal super-hero names when not on a mission</li>
+					<li class="fragment"><pre><code data-trim>
+						const realName = "Peter Parker"
+						const heroName = "Spider-Man";
+						alert("Hi " + ??? + "!");</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3><code>if</code> Statements</h3>
+				<ul>
+					<li class="fragment">So far we are all in class</li>
+					<li class="fragment">But what <code>if</code> we go on a mission 🤪</li>
+					<li class="fragment">It runs code only under certain <b>conditions</b></li>
+					<li class="fragment">For conditions, you can e.g. compare two variables</li>
+					<li class="fragment">For equality we use <code>===</code> (yes, triple! 👀)</li>
+					<li class="fragment">Example: <code>dog === "chihuahua"</code></li>
+					<li class="fragment">Compares two things, e.g., two variables, a variable and a value, ...</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Lets get a bit more practical</h3>
+				<p class="fragment">So how do we define a condition</p>
+				<ul>
+					<li class="fragment">
+					<pre><code data-trim>
+						if (condition) {
+							//conditional code here...
+						}
+					</code></pre>
+					</li>
+					<li class="fragment">
+					<pre><code data-trim>
+						function greetOnlyMe(){
+						const name = prompt("What is your name");
+						if (name === "Anna") {
+							alert("Hi Anna!");
+						}}
+						greetOnlyMe();
+					</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Challenge accepted: lets greet your favourite 🥰 super hero</h3>
+				<ul>
+					<li class="fragment">Super hero has a real name and a hero name</li>
+					<li class="fragment">Ask if we are on the mission</li>
+					<li class="fragment">If answer is "yes", say hi with super-hero name</li>
+					<li class="fragment">If answer is "no", say hi with real name</li>
+					<li class="fragment">
+					<pre><code data-trim>
+						const onMission = prompt("Are we on a mission?");
+						if(){
+							alert();
+						}
+						if(){
+							alert();
+						}
+					</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Avengers always have a plan-B</h3>
+				<ul>
+					<li class="fragment">
+					<pre><code data-trim>
+						function greetHero() {
+						const heroName = "Rocket Raccoon"
+						const realName = "Peter Quill's pet";
+						const onMission = prompt("Are we on a mission?");
+						if(onMission === "yes"){
+							alert("Hey there, " + heroName + " 👋");
+						}else if(onMission === "no"){
+							alert("Hey there, " + realName + " 👋");
+						} else {
+							alert("Hey there, cute fluffy creature 👋");
+						}}
+						greetHero();
+					</code></pre>
+					</li>
+					<li class="fragment"><code>if</code> can be followed by <code>else</code> block</li>
+					<li class="fragment"><code>else if</code> checks other <code>if</code> condition</li>
+					<li class="fragment"><code>else</code> covers all other cases</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Lets practice <code>if</code> and <code>else</code> a bit more</h3>
+				<ul>
+					<li class="fragment">
+					<pre><code data-trim>
+						function getFavouritePet(pet){
+							if(pet === "dog"){
+								alert("I ❤ dogs");
+							}else if(pet === "cat"){
+								alert("I ❤ cats");
+							}else {
+								alert("I ❤ goats");
+						}}
+						getFavouritePet("cat");
+					</code></pre>
+					</li>
+					<li class="fragment">
+					<pre><code data-trim>
+						function getFavouritePet(pet){
+							if(pet === "dog"){
+								alert("I ❤ dogs");
+							}else if(pet === "cat"){
+								alert("I ❤ cats");
+							}else {
+								alert("I ❤ goats");
+						}}
+						getFavouritePet("lion");
+					</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Can you find all the errors?</h3>
+				<ul>
+					<li class="fragment">
+					<pre><code data-trim>
+						function getFavouritePet(pet){
+							if(pet === "dog"){
+								alert("I ❤ dogs");
+							}else if (pet == "cat"){
+								alert("I ❤ cats");
+							}else {
+								alert("I ❤ goats");
+							}
+						}
+						getFavouritePet("cat");
+					</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Bonus: there is always another way</h3>
+				<ul>
+					<li class="fragment">
+					<pre><code data-trim>
+							switch(condition){
+								// same as if(condition === "value1"){}
+								case "value1":
+									// do something
+									break; // end the switch
+								case "valueN": ...
+								default: // else
+									// do something
+							}
+					</code></pre>
+					</li>
+					<li class="fragment">The <code>switch</code> expression is evaluated once</li>
+					<li class="fragment">The value of the expression is compared with the values of each <code>case</code></li>
+					<li class="fragment">If there is a match, the associated block of code is executed</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Enough words, show me your code!</h3>
+				<div class="fragment">
+					<pre><code data-trim>
+						alert(getFavouritePet(prompt("Who is the best pet?")));
+						function getFavouritePet(pet){
+							switch(pet){
+								case "goat":
+									alert("I ❤ goats too");
+								case "cat":
+									return "🐱 are also fun!";
+								case "":
+									alert("stop cheating!");
+								default:
+									alert("I still ❤ goats more than " + pet);
+						}
+						alert("I am outside of switch case block");
+						}
+					</code></pre>
+				</div>
+			</section>
+			<section>
+				<h3>New challenge: greet a super hero with <code>switch</code> block</h3>
+				<ul>
+					<li class="fragment">Super hero has a real name and a hero name</li>
+					<li class="fragment">Check if we are on a mission</li>
+					<li class="fragment">Remember plan B</li>
+					<li class="fragment">
+					<pre><code data-trim>
+						let onMission = prompt("Are we on a mission?");
+						switch(onMission) {
+						case "" :
+							alert();
+							break;
+						default : ... ;
+						}
+					</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Here is my solution</h3>
+				<div class="fragment">
+					<pre><code data-trim>
+						const heroName = "Rocket Raccoon"
+						const realName = "Peter Quill's pet";
+						greetHero(heroName, realName)
+						function greetHero(heroName, realName) {
+						switch(prompt("Are we on a mission?")){
+						case "yes":
+							alert("Hey there, " + heroName + " 👋");
+							break;
+						case "no":
+							alert("Hey there, " + realName + " 👋");
+							break;
+						default:
+							alert(aa + bb);
+						}}
+					</code></pre>
+				</div>
+			</section>
+			<section>
+				<h3>So what we know so far</h3>
+				<ul>
+					<li class="fragment"><pre><code data-trim>
+						const name = "Peter";
+						alert("Hi " + name + "!");</code></pre>
+					</li>
+					<li class="fragment"><pre><code data-trim>
+					function greetSpiderMan(onMission){
+						if(onMission === "yes"){
+							return "SpiderMan"
+						}else {
+							return "Peter"
+						}
+					}
+					alert("Hi " + greetSpiderMan("no"));
+						</code></pre>
+					</li>
+					<li class="fragment"><pre><code data-trim>
+					function greetSpiderMan(onMission){
+						switch(onMission){
+							case "yes": return "SpiderMan";
+							case "no": return "Peter";
+						}
+					}
+					alert("Hi " + greetSpiderMan("yes"));
+						</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>New challenge: age check</h3>
+				<ul>
+					<li class="fragment">Imagine you want to make sure the user is 18 or older</li>
+					<li class="fragment">For kids, you want to show a cool web page</li>
+					<li class="fragment">Grownups just get a boring page</li>
+					<li class="fragment">How can you do it with if?</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Number comparisons</h3>
+				<p class="fragment">So far, we can only check for equality, e.g.</p>
+				<span class="fragment">
+					<pre><code data-trim>
+						const age = prompt("What's your age?");
+						if (age === 19) {
+							// Old enough! But what about 20? 21?
+						}
+					</code></pre>
+				</span>
+			</section>
+
+			<section>
+				<h3>Number comparisons</h3>
+				<ul>
+					<li>How to check for "older than 18?"</li>
+					<li class="fragment"><code>age &gt; 18</code></li>
+					<li class="fragment">The opposite: <code>age &lt; 18</code></li>
+					<li class="fragment">
+						Exercise:
+						<ul class="smaller">
+							<li>Write a function "checkAge(age)"</li>
+							<li>If older than 18, return "adult"</li>
+							<li>If younger than 18, return "child"</li>
+							<li>Try it out with some different ages!</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Number comparisons</h3>
+				<ul>
+					<li>Problem: What about age 18? Should count as adult!</li>
+					<li class="fragment">We need a check "greater than or equal"</li>
+					<li class="fragment">Try: <code>age &gt;= 18</code></li>
+					<li class="fragment">Opposite: <code>age &lt;= 18</code></li>
+					<li class="fragment">Update your function with the correct comparisons!</li>
+				</ul>
+			</section>
+
+			<section class="smaller">
+				<h3>Summary: Comparisons ⚖️</h3>
+				<ul>
+					<li>Comparisons are what we put inside a <code>if(...)</code></li>
+					<li class="fragment">Are used to compare two values</li>
+					<li class="fragment"><code>===</code> <i class="fragment">(equals)</i></li>
+					<li class="fragment"><code>&lt;</code> <i class="fragment">(less than)</i></li>
+					<li class="fragment"><code>&gt;</code> <i class="fragment">(greater than)</i></li>
+					<li class="fragment"><code>&lt;=</code> <i class="fragment">(less than or equal to)</i></li>
+					<li class="fragment"><code>&gt;=</code> <i class="fragment">(greater than or equal to)</i></li>
+					<li class="fragment"><code>!==</code> <i class="fragment">(not equal)</i></li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Bonus: complex conditions</h3>
+				<ul>
+					<li>What if we have multiple conditions to check against?</li>
+					<li class="fragment">Challenge: Show alert if user is 10+ years old and love cats</li>
+					<li class="fragment">
+					<pre><code data-trim>
+						function showCat(age, loveCats){
+						if (age >= 10 && loveCats === true) {
+							alert('🐱')
+						}
+						}
+						showCat(12, true)
+					</code></pre>
+					</li>
+					<li class="fragment">We say AND with <code>&&</code> </li>
+					<li class="fragment">We say OR with <code>||</code></li>
+					<li class="fragment">
+					<pre><code data-trim>
+						function showCat(age, loveCats){
+						if ((age >= 10 && loveCats === true) || age === 65) {
+							alert('🐱')
+						}
+						}
+						showCat(65, false)
+					</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>lets practice complex conditions</h3>
+				<ul>
+					<li class="fragment"><pre><code>age >= 10 && loveCats === true</code>12, true</pre></li>
+					<li class="fragment"><pre><code>age >= 10 && loveCats === true</code>5, true</pre></li>
+					<li class="fragment"><pre><code>age >= 10 || loveCats === true</code>5, true</pre></li>
+					<li class="fragment"><pre><code>(age >= 10 || loveCats === true) && age < 65</code>65, true</pre></li>
+					<li class="fragment"><pre><code>(age >= 10 || loveCats === true) || age < 65</code>65, true</pre></li>
+					<li class="fragment"><pre><code>(age >= 10 && loveCats === true) || age < 65</code>65, false</pre></li>
+				</ul>
+			</section>
+			<section>
+				<h3>What we finally know</h3>
+				<span class="fragment"><pre><code data-trim>
+					function greetSpiderMan(onMission, age){
+						if(onMission === "yes" && age > 18){
+							return "SpiderMan"
+						}else if(onMission === "yes") {
+							return "Mr SpiderMan"
+						}else {
+							return "Peter"
+						}
+					}
+					alert("Hi " + greetSpiderMan("yes", 5));
+				</code></pre>
+				</span>
+			</section>
+			<section>
+				<h3>Class work</h3>
+				<a href="https://mrtim.github.io/js-munich-2020-spring/lessons/6_objects_intro/classwork">
+					Instructions here
+				</a>
+			</section>
+			<section>
+				<h3>Homework</h3>
+				<a href="https://mrtim.github.io/js-munich-2020-spring/homework/6_store">
+					Instructions here
+				</a>
+			</section>
+		</div>
+	</div>
+
+	<script src="../../jquery-3.3.1.slim.min.js"></script>
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			history: true,
+			dependencies: [
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () { hljs.initHighlightingOnLoad(); } },
+			]
+		});
+
+		// Make each code example executable by clicking it:
+		$(document).ready(function () {
+			$('code').click(function (event) {
+				console.info('Click!', $(this).text());
+				eval($(this).text());
+			});
+		});
+	</script>
+</body>
+
+</html>
