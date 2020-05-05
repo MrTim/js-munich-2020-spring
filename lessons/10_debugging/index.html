@@ -87,13 +87,19 @@
           <h3>
             <code>console.log</code>
           </h3>
+          <ul>
+            <li class="fragment">Used by everyone</li>
+            <li class="fragment">
+              Sometimes simplest and most effective form of debugging
+            </li>
+          </ul>
         </section>
         <section>
           <h3>Do you another debugger?</h3>
           <h3>🤔</h3>
         </section>
         <section>
-          <h3>DevTools</h3>
+          <h3>DevTools of the browser</h3>
         </section>
         <section>
           <h4>You've already seen the DevTools several times</h4>
@@ -113,9 +119,6 @@
           <p>View -> Developer -> Developer Tools (Chrome)</p>
           <p>Tools -> Developer -> Developer Tools (MS Edge)</p>
           <p>Tools -> Web Developer -> Toggle Tools (Firefox)</p>
-        </section>
-        <section>
-          <h3>Basically all DevTools have kind of the same functionality</h3>
         </section>
         <section>
           <h3>Elements / Inspector</h3>
@@ -163,142 +166,58 @@
           <h3>🐛</h3>
         </section>
         <section>
-          <h3>Lets change our distance calculator</h3>
-          <pre class="fragment">
-					<code>
-function calculateDistance() {
-	let speed = 60;
-	let time = 2;
-	alert("Distance is: " + speed * time);
-}
-calculateDistance();
-					</code>
-				</pre>
-          <pre class="fragment">
-					<code>
-function calculateDistance(speed, time) {
-	alert("Distance is: " + speed * time);
-}
-calculateDistance(60, 2);
-calculateDistance(100, 3);
-					</code>
-				</pre>
-        </section>
-        <section>
-          <h3>We've seen function arguments before</h3>
+          <h3>Debugging in 4 Steps</h3>
           <ul>
-            <li class="fragment">alert('Hello there!')</li>
-            <li class="fragment">prompt('How old are you?')</li>
+            <li class="fragment">Go to the Sources Tab</li>
+            <li class="fragment">Open the JS file</li>
+            <li class="fragment">Add a breakpoint</li>
             <li class="fragment">
-              btnEl.addEventListener('click', yourClickHandler)
+              Trigger the action
             </li>
           </ul>
         </section>
         <section>
-          <h3>Order metters!</h3>
-          <p>Arguments should be provided in correct order</p>
-          <pre>
-					<code>
-calculateDistance(60, 2);  // speed = 60, time = 2
-calculateDistance(3, 100); // speed = 3, time = 100
-					</code>
-				</pre>
+          <img src="./lesson_10_2.png" alt="Debugger View" />
         </section>
         <section>
-          <h3>Now we have this function</h3>
-          <pre>
-					<code>
-function calculateDistance(speed, time) {
-  alert("Distance is: " + speed * time);
-}
-calculateDistance(60, 2);
-calculateDistance(100, 3);
-					</code>
-				</pre>
-          <p>
-            Now we can reuse our function with <b>different</b> values of
-            <b>speed</b> and <b>time</b>!
-          </p>
-          <p class="fragment">But still we can only alert the result :(</p>
+          <img src="./lesson_10_3.png" alt="Debugger View Activated" />
         </section>
         <section>
-          <h3>Return statement</h3>
-          <p class="fragment">
-            <b>return</b> statement stops the execution of a function and
-            returns some value back
-          </p>
-          <h5 class="fragment">Syntax</h5>
-          <pre class="fragment">
-					<code>
-function yourFunctionName(parameter1, parameter2) {
-  let result = parameter1 + parameter2; // or any other operations
-  return result;
-}
-					</code>
-				</pre>
+          <h3>
+            <code>debugger;</code>
+          </h3>
+          <ul>
+            <li class="fragment">Trigger breakpoints from your code</li>
+            <li class="fragment">Only works, when DevTools are open</li>
+          </ul>
         </section>
         <section>
-          <h3>Now our function looks like this</h3>
-          <pre>
-					<code>
-function calculateDistance(speed, time) {
-	const distance = speed * time;
-	return distance;
-}
-					</code>
-				</pre>
+          <h3>Differences between Browsers</h3>
         </section>
         <section>
-          <h3>How do we use it?</h3>
-          <div class="fragment">
-            <pre>
-						<code>
-function calculateDistance(speed, time) {
-	const distance = speed * time;
-	return distance;
-}
-
-const distance = calculateDistance(60, 2);
-alert(distance);
-console.log(`In console: ${distance}`);
-
-// or in another example
-alert(calculateDistance(60, 2) + calculateDistance(200, 2))
-						</code>
-					</pre>
-          </div>
+          <h3>Basically all DevTools have kind of the same functionality</h3>
         </section>
         <section>
-          <h3>We can pass a <b>function</b> as an argument</h3>
-          <h5 class="fragment">and that function would be a <b>callback</b></h5>
-        </section>
-        <section>
-          <p>Let's create another function</p>
-          <pre>
-					<code>
-function outputDistance(distance, callback) {
-  let sentence = "Distance to the Alps is equal to: " + distance;
-  callback(sentence);
-}
-
-outputDistance('100KM', alert);
-					</code>
-				</pre>
-          which is the same as
-          <pre>
-					<code>
-function outputDistance(distance) {
-  alert(distance);
-}
-
-outputDistance('100KM');
-					</code>
-				</pre>
+          <h3>Small differences between vendors</h3>
+          <ul>
+            <li class="fragment">
+              Chrome wins with debugging/testing service workers
+            </li>
+            <li class="fragment">
+              Chrome wins with authoring tools
+            </li>
+            <li class="fragment">
+              Firefox has better for CSS (Flexbox, CSS Grid)
+            </li>
+            <li class="fragment">
+              Don't be limited to Chrome or FF
+            </li>
+          </ul>
         </section>
         <section>
           <h3>Class work</h3>
           <a
-            href="https://mrtim.github.io/js-munich-2020-spring/lessons/9_more_about_functions/classwork"
+            href="https://mrtim.github.io/js-munich-2020-spring/lessons/10_debugging/classwork"
           >
             Instructions here
           </a>
