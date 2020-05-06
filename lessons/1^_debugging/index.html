@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Lesson 10</title>
+    <title>Lesson 11 - Debugging</title>
     <link rel="stylesheet" href="../../reveal.js/css/reveal.css" />
     <link rel="stylesheet" href="../../reveal.js/css/theme/moon.css" />
     <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css" />
@@ -55,7 +55,7 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <h1>Lecture 10</h1>
+          <h1>Lecture 11</h1>
           <h3>Debugging</h3>
         </section>
         <section>
@@ -103,7 +103,7 @@
         </section>
         <section>
           <h4>You've already seen the DevTools several times</h4>
-          <img src="./lesson_10_1.png" alt="DevTools" />
+          <img src="./lesson_11_1.png" alt="DevTools" />
         </section>
         <section>
           <h3>Open your DevTools</h3>
@@ -177,10 +177,10 @@
           </ul>
         </section>
         <section>
-          <img src="./lesson_10_2.png" alt="Debugger View" />
+          <img src="./lesson_11_2.png" alt="Debugger View" />
         </section>
         <section>
-          <img src="./lesson_10_3.png" alt="Debugger View Activated" />
+          <img src="./lesson_11_3.png" alt="Debugger View Activated" />
         </section>
         <section>
           <h3>
@@ -217,7 +217,7 @@
         <section>
           <h3>Class work</h3>
           <a
-            href="https://mrtim.github.io/js-munich-2020-spring/lessons/10_debugging/classwork"
+            href="https://mrtim.github.io/js-munich-2020-spring/lessons/11_debugging/classwork"
           >
             Instructions here
           </a>
@@ -236,19 +236,19 @@
             src: '../../reveal.js/plugin/highlight/highlight.js',
             async: false,
             callback: function () {
-              hljs.initHighlightingOnLoad()
+              hljs.initHighlightingOnLoad();
             },
           },
         ],
-      })
+      });
 
       // Make each code example executable by clicking it:
       $(document).ready(function () {
         $('code').click(function (event) {
-          console.info('Click!', $(this).text())
-          eval($(this).text())
-        })
-      })
+          console.info('Click!', $(this).text());
+          eval($(this).text());
+        });
+      });
     </script>
   </body>
 </html>
