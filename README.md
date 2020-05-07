@@ -109,9 +109,16 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 - string and number comparison.
 - classwork: guessing game.
 
+## [Lesson 11 - Debugging](https://mrtim.github.io/js-munich-2020-spring/lessons/11_debugging)
+
+- What is debugging?
+- How do I debug?
+- Differences between Browsers.
+- classwork: practice debugging.
+
 ## Next Meets
 
-- 10th: conditionals
+- 11th: debugging
 
 ## Additional Ideas
 
