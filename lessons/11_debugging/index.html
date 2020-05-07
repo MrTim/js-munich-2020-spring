@@ -1,0 +1,254 @@
+<html>
+  <head>
+    <title>Lesson 11 - Debugging</title>
+    <link rel="stylesheet" href="../../reveal.js/css/reveal.css" />
+    <link rel="stylesheet" href="../../reveal.js/css/theme/moon.css" />
+    <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css" />
+    <link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js" />
+    <link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js" />
+    <style>
+      b {
+        background-color: #ad0170;
+      }
+
+      .reveal pre {
+        margin: 0;
+      }
+
+      .monospace {
+        font-family: monospace !important;
+      }
+
+      .illustration {
+        border: 0px;
+      }
+
+      .reveal li {
+        margin-bottom: 0.5em;
+      }
+
+      .reveal pre {
+        width: 100%;
+      }
+
+      .reveal pre code {
+        cursor: pointer;
+      }
+
+      .reveal li pre {
+        width: fit-content;
+      }
+
+      .logo {
+        position: fixed;
+        /* Sit on top of the page content */
+        z-index: 2;
+        /* Specify a stack order in case you're using a different order for other elements */
+      }
+    </style>
+  </head>
+
+  <body>
+    <a href="https://www.redi-school.org/"
+      ><img src="../../redi-school-logo.jpg" class="logo"
+    /></a>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Lecture 11</h1>
+          <h3>Debugging</h3>
+        </section>
+        <section>
+          <h3>What we would cover?</h3>
+          <ul>
+            <li class="fragment">What is debugging?</li>
+            <li class="fragment">How do I debug</li>
+            <li class="fragment">Differences between Browsers</li>
+            <li class="fragment">Practice</li>
+          </ul>
+        </section>
+        <section>
+          <h3>What is debugging?</h3>
+          <h3>🐛</h3>
+        </section>
+        <section>
+          <h3>Most essential tool</h3>
+          <ul>
+            <li class="fragment">Finding errors</li>
+            <li class="fragment">Investigate variables/return values</li>
+            <li class="fragment">Step-by-Step</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Do you know one kind of debugger?</h3>
+          <h3>🤔</h3>
+        </section>
+        <section>
+          <h3>
+            <code>console.log</code>
+          </h3>
+          <ul>
+            <li class="fragment">Used by everyone</li>
+            <li class="fragment">
+              Sometimes simplest and most effective form of debugging
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Do you know another debugger?</h3>
+          <h3>🤔</h3>
+        </section>
+        <section>
+          <h3>DevTools of the browser</h3>
+        </section>
+        <section>
+          <h4>You've already seen the DevTools several times</h4>
+          <img src="./lesson_11_1.png" alt="DevTools" />
+        </section>
+        <section>
+          <h3>Open your DevTools</h3>
+          <h6>macOS</h6>
+          <p>
+            ⌥ + ⌘ + i
+          </p>
+          <h6>Windows / Linux</h6>
+          <p>
+            F12
+          </p>
+          <h6>Or via the menu</h6>
+          <p>View -> Developer -> Developer Tools (Chrome)</p>
+          <p>Tools -> Developer -> Developer Tools (MS Edge)</p>
+          <p>Tools -> Web Developer -> Toggle Tools (Firefox)</p>
+        </section>
+        <section>
+          <h3>Elements / Inspector</h3>
+          <ul>
+            <li class="fragment">HTML</li>
+            <li class="fragment">Styles</li>
+            <li class="fragment">You can manipulate it!</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Console</h3>
+          <ul>
+            <li class="fragment">See the output of <code>console.log</code></li>
+            <li class="fragment">read–eval–print loop (REPL)</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Network</h3>
+          <ul>
+            <li class="fragment">See all network requests</li>
+            <li class="fragment">Investigate requests/responses</li>
+            <li class="fragment">Duration, size, ...</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Sources / Debugger</h3>
+          <ul>
+            <li class="fragment">Take a look at the JS code</li>
+            <li class="fragment">Debug with Breakpoints</li>
+            <li class="fragment">Step-in, step-out, step-over, ....</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Other tabs</h3>
+          <ul>
+            <li class="fragment">Application / Storage</li>
+            <li class="fragment">Memory</li>
+            <li class="fragment">
+              Performance, Accessibility, Lighthouse, ...
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>How do I debug?</h3>
+          <h3>🐛</h3>
+        </section>
+        <section>
+          <h3>Debugging in 4 Steps</h3>
+          <ul>
+            <li class="fragment">Go to the Sources Tab</li>
+            <li class="fragment">Open the JS file</li>
+            <li class="fragment">Add a breakpoint</li>
+            <li class="fragment">
+              Trigger the action
+            </li>
+          </ul>
+        </section>
+        <section>
+          <img src="./lesson_11_2.png" alt="Debugger View" />
+        </section>
+        <section>
+          <img src="./lesson_11_3.png" alt="Debugger View Activated" />
+        </section>
+        <section>
+          <h3>
+            <code>debugger;</code>
+          </h3>
+          <ul>
+            <li class="fragment">Trigger breakpoints from your code</li>
+            <li class="fragment">Only works, when DevTools are open</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Differences between Browsers</h3>
+        </section>
+        <section>
+          <h3>Basically all DevTools have kind of the same functionality</h3>
+        </section>
+        <section>
+          <h3>Small differences between vendors</h3>
+          <ul>
+            <li class="fragment">
+              Chrome wins with debugging/testing service workers
+            </li>
+            <li class="fragment">
+              Chrome wins with authoring tools
+            </li>
+            <li class="fragment">
+              Firefox has support better for CSS (Flexbox, CSS Grid)
+            </li>
+            <li class="fragment">
+              Don't be limited to Chrome or FF
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Class work</h3>
+          <a
+            href="https://mrtim.github.io/js-munich-2020-spring/lessons/11_debugging/classwork"
+          >
+            Instructions here
+          </a>
+        </section>
+      </div>
+    </div>
+
+    <script src="../../jquery-3.3.1.slim.min.js"></script>
+    <script src="../../reveal.js/lib/js/head.min.js"></script>
+    <script src="../../reveal.js/js/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        history: true,
+        dependencies: [
+          {
+            src: '../../reveal.js/plugin/highlight/highlight.js',
+            async: false,
+            callback: function () {
+              hljs.initHighlightingOnLoad()
+            },
+          },
+        ],
+      })
+
+      // Make each code example executable by clicking it:
+      $(document).ready(function () {
+        $('code').click(function (event) {
+          console.info('Click!', $(this).text())
+          eval($(this).text())
+        })
+      })
+    </script>
+  </body>
+</html>
