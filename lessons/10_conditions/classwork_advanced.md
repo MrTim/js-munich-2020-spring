@@ -56,6 +56,6 @@ Add button to the cart to checkout that does the following:
 
 1. buys each product via the buy endpoint
   - endpoint: `student-store.travisshears.xyz/buy/<sku>?token=<token>`
-    - request type: GET
+    - request type: POST
 2. closes the cart popup
 3. rerenders the product grid with updated stock counts
