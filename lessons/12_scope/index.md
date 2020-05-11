@@ -130,9 +130,25 @@ Just going to touch lightly here because it a deeper topic but variables created
 `let` are block scoped ex `if`, `for` blocks. Variables created with `var` or `function` are
 function scoped.
 
+Example:
+
+```js
+
+const firstName = 'Bob' // global
+
+if (firstName == 'Bob') {
+   const lastName = 'Smith';
+   var age = 56;
+}
+
+console.log(lastName); // undefined
+console.log(age); // 56
+```
 
 
 ## Resources
 
 MDN Scope: https://developer.mozilla.org/en-US/docs/Glossary/Scope
 Further Reading: https://github.com/leonardomso/33-js-concepts#6-function-scope-block-scope-and-lexical-scope
+
+
