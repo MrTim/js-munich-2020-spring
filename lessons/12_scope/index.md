@@ -155,7 +155,7 @@ lecture.
 
 ## Resources
 
-MDN Scope: https://developer.mozilla.org/en-US/docs/Glossary/Scope
-Further Reading: https://github.com/leonardomso/33-js-concepts#6-function-scope-block-scope-and-lexical-scope
+- [MDN Scope](https://developer.mozilla.org/en-US/docs/Glossary/Scope)
+- [Further Reading Links!](https://github.com/leonardomso/33-js-concepts#6-function-scope-block-scope-and-lexical-scope)
 
 
