@@ -18,6 +18,7 @@ We have a midterm test coming up on Monday May 18th, 2020.
         - scope
     - arrays
         - `.length`
+        - `.push`
     - objects
         - nested objects
     - loops
@@ -64,17 +65,6 @@ They will give us a chance to tailor curriculum to each to student and push them
 - shows something previously unseen
 - unique
 - is interactive
-
-### Sample ideas
-
-- deep e-commerce store
-    - cart
-    - checkout system
-    - backend api communication
-- corona virus info
-    - present corona virus data in a meaningful
-- story share app
-    - a place where users can share stories / photos about a certain topic
 
 
 ## Step through debugging in JavaScript
@@ -142,7 +132,7 @@ function scoped.
 
 
 
-
 ## Resources
 
 MDN Scope: https://developer.mozilla.org/en-US/docs/Glossary/Scope
+Further Reading: https://github.com/leonardomso/33-js-concepts#6-function-scope-block-scope-and-lexical-scope
