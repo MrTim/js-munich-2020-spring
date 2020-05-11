@@ -145,6 +145,13 @@ console.log(lastName); // undefined
 console.log(age); // 56
 ```
 
+## Homework
+
+The only homework this week is to come up with a final project idea and prepare for the midterm next
+week. More info on the format of your final project idea submission will come in the following
+lecture.
+
+
 
 ## Resources
 
