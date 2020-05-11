@@ -1,16 +1,74 @@
-# Classwork 6 -- Random Wikipedia Articles + Arrays
+# Classwork 12 -- Code Challanges
 
-Today's goal is to use a dynamic data source to practice with js arrays and gererating html.
+Today's we are going to go through some quick code challanges togeather
 
-## Spec
+## Challange 1 -- FirstLastLetter
 
-1. Start with the boilerplate [here](https://gist.github.com/BTBTravis/c91c1a2598feb28da5e57bb997fda17a)
-1. The random wiki js file adds a function to global scope called `onRandomWikipediaArticle(cb)` which takes a callback function, cb. This is vary similer to the `addEventListiner('click', cb)` 
-1. To get an idea of what is in an article console log it and explore it in the dev tools
-1. Add each incomming article to an array and display a representation of the articles on the page in a `<ul>`
-    - a representation in this case could be the title (easy) or maybe div full of information like the discription and an image (harder)
-1. Seprate from the big list use what you learned about arrays to also represent the first article of the array. Title it "First Article:" with a header tag
-2. Also represent the last article of the array. Add title "Last Article:" on this one with a header tag
+Write a function that removes the first and last letter from a work.
 
-## Bonus
-- add an input put that takes an number i and  represents the article array at index i on the page with title "Article at index i:"
+```js
+const words = [
+    'interfere',
+    'soojee',
+    'victrice',
+    'civilisations',
+    'succinonitrile',
+    'dogfighters',
+    'tempeh'
+];
+
+function removeFirstLast(str){
+    // TODO: your code here
+};
+
+const correctAnswer = [
+    'nterfer',
+    'ooje',
+    'ictric',
+    'ivilisation',
+    'uccinonitril',
+    'ogfighter',
+    'empe'
+];
+
+const correct = JSON.stringify(correctAnswer) === JSON.stringify(words.map(removeFirstLast));
+console.log('correct answer?', correct);
+```
+
+## Challange 2 -- Sum Positive Numbers
+
+Write a function that returns the sum of all the positive numbers in an array
+
+
+```js
+const testNums = [
+    1,
+    -4,
+    7,
+    12
+];
+
+function positiveSum(nums){
+    // TODO: your code here
+};
+
+const answer = positiveSum(testNums);
+
+console.log('The correct sum', answer === 20);
+```
+
+## Challange 3 -- Facebook like text
+
+Write a function that simulates the facebook like text.
+
+The function with recive an array of names and needs to output the correct like text.
+
+```js
+[] // "no one likes this"
+["Peter"] // "Peter likes this"
+["Jacob", "Alex"] // "Jacob and Alex like this"
+["Max", "John", "Mark"] // "Max, John and Mark like this"
+["Alex", "Jacob", "Mark", "Max"] // "Alex, Jacob and 2 others like this"
+```
+
+
