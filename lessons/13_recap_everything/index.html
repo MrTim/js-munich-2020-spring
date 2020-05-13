@@ -1,0 +1,407 @@
+<html>
+
+<head>
+	<title>Lesson 13</title>
+	<link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="../../reveal.js/css/theme/moon.css">
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+	<style>
+		b {
+			background-color: #ad0170;
+		}
+
+		.reveal pre {
+			margin: 0;
+		}
+
+		.monospace {
+			font-family: monospace !important;
+		}
+
+		.illustration {
+			border: 0px
+		}
+
+		.reveal li {
+			margin-bottom: 0.5em;
+		}
+
+		.reveal pre {
+			width: 100%;
+		}
+
+		.reveal pre code {
+			cursor: pointer;
+		}
+
+		.reveal li pre {
+			width: fit-content;
+		}
+
+		span.exe {
+			font-weight: bold;
+			font-style: oblique;
+			color: #c9c9c9;
+		}
+
+		.logo {
+			position: fixed;
+			/* Sit on top of the page content */
+			z-index: 2;
+			/* Specify a stack order in case you're using a different order for other elements */
+		}
+	</style>
+</head>
+
+<body>
+	<a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Lecture 13</h1>
+				<h3>Recap everything</h3>
+			</section>
+			<section>
+				<h3>What we would cover?</h3>
+				<ul class="fragment">
+					<li>Git</li>
+					<li>Variables</li>
+					<li>Types</li>
+					<li>Objects</li>
+					<li>Arrays</li>
+					<li>Loops</li>
+					<li>Functions</li>
+					<li>Scope</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Git</h3>
+				<p class="fragment">Important things to remember</p>
+				<ul class="fragment">
+					<li><span class="exe">git clone &lt;repo name&gt;</span> - clone repository</li>
+					<li><span class="exe">git branch -a</span> - get list of all known branches in repository</li>
+					<li><span class="exe">git checkout &lt;branch name&gt;</span> - switch to a different branch</li>
+					<li><span class="exe">git checkout -b &lt;branch name&gt;</span> - create new branch</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Git</h3>
+				<ul>
+					<li><span class="exe">git status</span> & <span class="exe">git diff</span> - check current status of your changes</li>
+					<li><span class="exe">git add .</span> - mark all your changes as ready for commit</li>
+					<li><span class="exe">git commit -m "your meaningful comment about these changes"</span> - commit all your changes</li>
+					<li><span class="exe">git push origin &lt;branch name&gt;</span> - push your branch so it would be available for review</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Variables</h3>
+				<p class="fragment">Important things to remember</p>
+				<ul class="fragment">
+					<li>Create variables with <span class="exe">const</span> or <span class="exe">let</span></li>
+					<li>You can store anything inside variables</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Variables</h3>
+				<p>Examples</p>
+				<pre><code>
+// Strings and Numbers
+const name = "Petja";
+let age = 20;
+
+// Boolean
+let isOld = false;
+
+// Arrays
+const colors = ['red', 'green', 'blue'];
+
+// Objects
+const book = {
+	name: 'The Silmarillion',
+	author: 'J. R. R. Tolkien',
+	pages: 365,
+	year: 1977
+};
+
+// Function
+const getCurrentDate = function() {
+	return (new Date());
+};
+				</code></pre>
+			</section>
+			<section>
+				<h3>Types</h3>
+				<p class="fragment">We learned and used following types:</p>
+				<ul class="fragment">
+					<li>String</li>
+					<li>Number</li>
+					<li>Boolean</li>
+					<li>Array</li>
+					<li>Object</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Types</h3>
+				<p class="fragment">Useful methods to work with types</p>
+				<ul class="fragment">
+					<li><span class="exe">typeof()</span> - to get type of a variable</li>
+					<li><span class="exe">parseInt()</span> & <span class="exe">parseFloat()</span> - cast to a number</li>
+					<li><span class="exe">toString()</span> - cast to a string</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Objects</h3>
+				<p class="fragment">Important things to remember</p>
+				<pre class="fragment">
+					<code>
+const book = {
+	name: 'The Silmarillion',
+	author: 'J. R. R. Tolkien',
+	pages: 365,
+	year: 1977,
+	origin: {
+		country: 'United Kingdom',
+		language: 'English'
+	}
+};
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Objects</h3>
+				<ul>
+					<li>syntax</li>
+					<li><span class="exe">book.name</span> or <span class="exe">book.origin.language</span> - access properties</li>
+					<li><span class="exe">book.price = 30;</span> - create new properties or change existing values</li>
+					<li><span class="exe">document.createElementById('div')</span> - call methods available in some objects</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Arrays</h3>
+				<p class="fragment">Important things to remember</p>
+				<pre class="fragment">
+					<code>
+const colors = ['red', 'green', 'blue'];
+const houseNumbers = [12, 3, 94, 23, 51, 83];
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Arrays</h3>
+				<ul>
+					<li>syntax</li>
+					<li>index starts from <span class="exe">0</span></li>
+					<li><span class="exe">colors[1]</span> - access element via index inside an array</li>
+					<li><span class="exe">colors.length</span> - get length of array</li>
+					<li><span class="exe">colors.push('yellow')</span> - add new element into array</li>
+					<li>MDN is you best freand for further reading</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Loops</h3>
+				<p class="fragment">Important things to remember</p>
+				<div class="fragment">
+					<p>We used and following "types" of loops</p>
+					<ul>
+						<li>for loop</li>
+						<li>map</li>
+						<li>forEach</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<h3>Loops</h3>
+				<h5>for loop</h5>
+				<pre>
+					<code>
+const houseNumbers = [12, 3, 94, 23, 51, 83];
+
+for (let i = 0; i < houseNumbers.length; i++) {
+	console.log(`House number is: ${houseNumbers[i]}`);
+}
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Loops</h3>
+				<h5>forEach</h5>
+				<pre>
+					<code>
+const houseNumbers = [12, 3, 94, 23, 51, 83];
+
+houseNumbers.forEach(function(hn) {
+	console.log(`House number is: ${hn}`);
+});
+					</code>
+				</pre>
+				or in more modern way
+				<pre>
+					<code>
+const houseNumbers = [12, 3, 94, 23, 51, 83];
+
+houseNumbers.forEach((hn) => console.log(`House number is: ${hn}`));
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Loops</h3>
+				<h5>map</h5>
+				<pre>
+					<code>
+const someNumbers = [1, 4, 9, 16];
+
+const doubledNumbers = someNumbers.map(function(n) {
+	return (n * 2);
+});
+console.log(doubledNumbers);
+					</code>
+				</pre>
+				or in more modern way
+				<pre>
+					<code>
+const someNumbers = [1, 4, 9, 16];
+console.log(someNumbers.map((n) => (n * 2)));
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Functions</h3>
+				<p class="fragment">Important things to remember</p>
+				<ul class="fragment">
+					<li>syntax</li>
+					<li><span class="exe">parameters</span> & <span class="exe">arguments</span></li>
+					<li><span class="exe">return</span> statement</li>
+					<li><span class="exe">callback</span> function</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Functions</h3>
+				with <span class="exe">for</span> loop
+				<pre>
+					<code>
+// sum all numbers in array
+function sum(numbers) {
+	let result = 0;
+
+	for (let i = 0; i < numbers.length; i++) {
+		result += numbers[i];
+	}
+
+	return result;
+}
+console.log(sum([1, 4, 6, 10]));
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Function</h3>
+				or differently with <span class="exe">forEach</span> loop
+				<pre>
+					<code>
+function sum(numbers) {
+	let result = 0;
+
+	numbers.forEach(function(n) {
+		result += n;
+	});
+
+	return result;
+}
+console.log(sum([1, 4, 6, 10]));
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Functions</h3>
+				or in modern way
+				<pre>
+					<code>
+console.log([1, 4, 6, 10].reduce((a, n) => (a += n), 0));
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Functions</h3>
+				Callback function
+				<pre>
+					<code>
+document.body.addEventListener('click', function() {
+	console.log('Body clicked');
+});
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Scope</h3>
+				<p class="fragment">Important things to remember</p>
+				<ul class="fragment">
+					<li><span class="exe">global</span> scope</li>
+					<li><span class="exe">function</span> scope</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Scope</h3>
+				<h5>Global scope</h5>
+				<pre>
+					<code>
+const name = 'Babu';
+const age = 99;
+
+function printAgeName() {
+	alert(`${name} is ${age} years old!`);
+}
+printAgeName();
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Scope</h3>
+				<h5>Function scope</h5>
+				<pre>
+					<code>
+const name = 'Babu';
+
+function printAgeName() {
+	const age = 99;
+	alert(`${name} is ${age} years old!`);
+}
+printAgeName();
+
+// let's try to console log age
+console.log(`Console: ${name} is ${age} years old!`);
+ 					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Class work</h3>
+				<a href="https://mrtim.github.io/js-munich-2020-spring/lessons/13_recap_everything/classwork">
+					Instructions here
+				</a>
+			</section>
+		</div>
+	</div>
+
+	<script src="../../jquery-3.3.1.slim.min.js"></script>
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			history: true,
+			dependencies: [
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () { hljs.initHighlightingOnLoad(); } },
+			]
+		});
+
+		// Make each code example executable by clicking it:
+		$(document).ready(function () {
+			$('code').click(function (event) {
+				console.info('Click!', $(this).text());
+				eval($(this).text());
+			});
+		});
+	</script>
+</body>
+
+</html>
