@@ -116,11 +116,14 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 - Differences between Browsers.
 - classwork: practice debugging.
 
+## [Lesson 12 - Scope](https://mrtim.github.io/js-munich-2020-spring/lessons/12_scope/index.md)
+
+- Some bits about a scoping
+
+## [Lesson 13 - Recap everything](https://mrtim.github.io/js-munich-2020-spring/lessons/13_recap_everything)
+
+- Recap lesson for what we've leared in this course
+
 ## Next Meets
 
-- 11th: debugging
-
 ## Additional Ideas
-
-- Debugging and problems solving
-  - Chrome dev tools, how to use it where to look for the errors
