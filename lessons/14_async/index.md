@@ -112,4 +112,32 @@ Async function with error handling
 })();
 ```
 
-## Fetch!
+## Fetch
+
+Resource Links:
+
+- [Docs](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- [Tutorial](https://javascript.info/fetch)
+
+## Classwork
+
+Lets go directly to playing with fetch(). Often times when working with APIs we need to call serval in order to preform some sort of operation like logging in. Today we are going to do something similar with a multi step math workflow. You are free to use promises, async functions, and callbacks as you with.
+
+1. Start by putting some status text on the page ex: **loading...**
+2. Get three random numbers from `/random` endpoint with a GET request
+    - You'll need to call it three times as it returns a single number each time
+3. Put a status update on the page ex. **got numbers..**
+4. Send these numbers to the `/total` endpoint via a POST request
+    - provide numbers in the body of the request in an array like:
+
+    ```json
+    {
+        "numbers": [6235, 24662, 2388135359]
+    }
+    ```
+
+    - this will return a job id
+5. Put a status update on the page ex **job processing...**
+6. This is a very complex calculation so the job will take some time to process. Call `/jobs/:job_id` repetitively until the job completes
+7. Render the answer to the page including the numbers ex: **1 + 1 + 1 = 3**
+8. Done! That was a lot of fetch calls good work 🎉
