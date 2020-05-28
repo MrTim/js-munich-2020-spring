@@ -100,16 +100,18 @@ Async functions are a modern way to work with promises that is closer to normal 
 Async function with error handling
 
 ```jsx
-(async function() {
-    try {
-        await delayedLog('Hello world', 300)
-        await delayedLog('I am a delayed message', 2000);
-        await delayedLog('Here is a really long messssssssssssssage', 5000);
-    } catch {
-        console.log('oops there was a problem');
-    }
+async function main() {
+    await delayedLog('Hello world', 300)
+    await delayedLog('I am a delayed message', 2000);
+    await delayedLog('Here is a really long messssssssssssssage', 5000);
     console.log('sent all messages');
-})();
+}
+
+main()
+.catch(function() {
+    console.log('oops there was a problem');
+})
+
 ```
 
 ## Fetch
