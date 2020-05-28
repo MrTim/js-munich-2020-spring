@@ -208,3 +208,11 @@ Lets go directly to playing with fetch(). Often times when working with APIs we 
 8. Done! That was a lot of fetch calls good work 🎉!
 
 *if you have trouble with https/http endpoint try http
+
+
+## Solution
+
+Thanks to [khomtali](https://gist.github.com/khomtali) for sharing her work!
+[Here](https://gist.github.com/khomtali/3056bf9f0b03a22e7bdf63914512d91e) is the finished classwork,
+to be used as a reference.
+
