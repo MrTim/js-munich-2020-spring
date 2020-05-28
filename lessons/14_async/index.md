@@ -177,7 +177,7 @@ Lets go directly to playing with fetch(). Often times when working with APIs we 
 
     - Full endpoint: `https://redi.travisshears.xyz/api/mathworkflow/v1/total`
 5. Put a status update on the page ex: **job processing...**
-6. This is a very complex calculation so the job will take some time to process. Call `/jobs/:job_id` repetitively with the job id from the previous step until the job completes
+6. This is a very complex calculation so the job will take some time to process. Call `/job-result/:job_id` repetitively with the job id from the previous step until the job completes
     - Calculation takes 30sec
     - Please be kind and limit your request to once per second. Perhaps using a sleep function like this:
 
