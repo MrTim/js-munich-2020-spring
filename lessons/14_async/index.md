@@ -46,7 +46,7 @@ A promise is a special kind of object to help us deal with async code. We can ch
 
 setTimeout Example:
 
-```js
+```jsx
 function delayedLog(message, delaySec) {
     const delayedPromise =  new Promise(function(resolve, reject) {
         setTimeout(function() {
@@ -64,7 +64,7 @@ function delayedLog(message, delaySec) {
 
 Promise chain:
 
-```js
+```jsx
 delayedLog('Hello world', 3000)
 .then(function() {
     return delayedLog('I am a delayed message', 2000);
@@ -99,7 +99,7 @@ Async functions are a modern way to work with promises that is closer to normal 
 
 Async function with error handling
 
-```js
+```jsx
 (async function() {
     try {
         await delayedLog('Hello world', 300)
@@ -119,6 +119,26 @@ Resource Links:
 - [Docs](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 - [Tutorial](https://javascript.info/fetch)
 
+Fetch is the main way we call APIs from the browser. It is a javascript interface for making HTTP calls. At its most simple you give it a url and it does a GET http call to that url and returns a promise for the result. So the first argument is the url. The second argument is an optional object of options. It is with this object that you can make fetch do POST request on your behalf. Here is a basic example of wrapping fetch + login logic into a function.
+
+```jsx
+const loginHost = "http://mycoolapi.com/login";
+
+async function login(name) {
+  const response = await fetch(loginHost, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({username: name})
+  });
+  const loginResult = await response.json();
+  return loginResult.status && loginResult.status === "success";
+}
+```
+
+Fetch gives up super powers! With it we can integrate with the outside world! Everything from turning lights on on the other side of the world to getting the latest sports scores.
+
 ## Classwork
 
 Lets go directly to playing with fetch(). Often times when working with APIs we need to call serval in order to preform some sort of operation like logging in. Today we are going to do something similar with a multi step math workflow. You are free to use promises, async functions, and callbacks as you with.
@@ -126,10 +146,18 @@ Lets go directly to playing with fetch(). Often times when working with APIs we 
 1. Start by putting some status text on the page ex: **loading...**
 2. Get three random numbers from `/random` endpoint with a GET request
     - You'll need to call it three times as it returns a single number each time
-    - full endpoint: `https://redi.travisshears.xyz/api/mathworkflow/v1/random`
-3. Put a status update on the page ex. **got numbers..**
+    - Example resp:
+
+    ```json
+    {
+      "number": 752462
+    }
+    ```
+
+    - Full endpoint: `https://redi.travisshears.xyz/api/mathworkflow/v1/random`
+3. Put a status update on the page ex: **got numbers..**
 4. Send these numbers to the `/total` endpoint via a POST request
-    - provide numbers in the body of the request in an array under the key "numbers":
+    - Provide numbers in JSON string as the body of the request. Follow this structure with an array of numbers under the key "numbers":
 
     ```json
     {
@@ -137,10 +165,9 @@ Lets go directly to playing with fetch(). Often times when working with APIs we 
     }
     ```
 
-    - include `'Content-Type': 'application/json'` so the backend knows you are sending JSON
-    - this will return a job id
-    - full endpoint: `https://redi.travisshears.xyz/api/mathworkflow/v1/total`
-    - an example responce:
+    - Include header `'Content-Type': 'application/json'` so the backend knows you are sending JSON
+    - This will return a job id
+    - Example resp:
 
     ```json
     {
@@ -148,11 +175,20 @@ Lets go directly to playing with fetch(). Often times when working with APIs we 
     }
     ```
 
-5. Put a status update on the page ex **job processing...**
-6. This is a very complex calculation so the job will take some time to process. Call `/jobs/:job_id` repetitively until the job completes
-    - full endpoint: `https://redi.travisshears.xyz/api/mathworkflow/v1/job-result/ceab79c4-6b05-490f-9327-53b188b155ae`
-    - calculation takes 30sec
-    - the endpoint returns values like this:
+    - Full endpoint: `https://redi.travisshears.xyz/api/mathworkflow/v1/total`
+5. Put a status update on the page ex: **job processing...**
+6. This is a very complex calculation so the job will take some time to process. Call `/jobs/:job_id` repetitively with the job id from the previous step until the job completes
+    - Calculation takes 30sec
+    - Please be kind and limit your request to once per second. Perhaps using a sleep function like this:
+
+    ```jsx
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    ```
+
+    - The result will of your job lives on the server for 500 seconds after that, poof it is gone
+    - Example resp:
 
     ```json
     {
@@ -165,7 +201,8 @@ Lets go directly to playing with fetch(). Often times when working with APIs we 
     }
     ```
 
+    - full endpoint: `https://redi.travisshears.xyz/api/mathworkflow/v1/job-result/ceab79c4-6b05-490f-9327-53b188b155ae`
 7. Render the answer to the page including the numbers ex: **1 + 1 + 1 = 3**
-8. Done! That was a lot of fetch calls good work 🎉 
+8. Done! That was a lot of fetch calls good work 🎉!
 
 *if you have trouble with https/http endpoint try http
