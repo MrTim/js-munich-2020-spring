@@ -27,9 +27,9 @@ The remote server could do any number of things:
 
 Most code is synchronous. It is executed line by line until it is done. Sort of like reading a book start to finish. Asynchronous programming as you may have guessed is why code is executed in an out of order fashion. Like reading a book by starting on the 45th page and reading for 5 pages. We need async coding for things like calling an api because the request might take a while and we don't want our code to pause and wait for the response. The user might interact with the page in that time and we need the code to also respond to that. 
 
-In javascript there are three many ways of async programming. Through callbacks,, promises (bit older method) and via async functions (native support in modern browsers). 
+In Javascript there are a few ways of async programming: Callbacks, Promises (bit older method) and Async functions (native support in modern browsers). 
 
-Calls backs we won't cover in this lecture because we have done so extensively in pervious classes. Think about:
+Callbacks we won't cover in this lecture because we have done so extensively in pervious classes. Think about:
 
 ![callback_example.png](callback_example.png)
 
@@ -126,9 +126,10 @@ Lets go directly to playing with fetch(). Often times when working with APIs we 
 1. Start by putting some status text on the page ex: **loading...**
 2. Get three random numbers from `/random` endpoint with a GET request
     - You'll need to call it three times as it returns a single number each time
+    - full endpoint: `https://redi.travisshears.xyz/api/mathworkflow/v1/random`
 3. Put a status update on the page ex. **got numbers..**
 4. Send these numbers to the `/total` endpoint via a POST request
-    - provide numbers in the body of the request in an array like:
+    - provide numbers in the body of the request in an array under the key "numbers":
 
     ```json
     {
@@ -136,8 +137,35 @@ Lets go directly to playing with fetch(). Often times when working with APIs we 
     }
     ```
 
+    - include `'Content-Type': 'application/json'` so the backend knows you are sending JSON
     - this will return a job id
+    - full endpoint: `https://redi.travisshears.xyz/api/mathworkflow/v1/total`
+    - an example responce:
+
+    ```json
+    {
+      "jobID": "416af744-4cc5-4cbb-95fd-b76f1312af70"
+    }
+    ```
+
 5. Put a status update on the page ex **job processing...**
 6. This is a very complex calculation so the job will take some time to process. Call `/jobs/:job_id` repetitively until the job completes
+    - full endpoint: `https://redi.travisshears.xyz/api/mathworkflow/v1/job-result/ceab79c4-6b05-490f-9327-53b188b155ae`
+    - calculation takes 30sec
+    - the endpoint returns values like this:
+
+    ```json
+    {
+        "status": "processing"
+    }
+    ...
+    {
+        "status": "complete",
+        "total": 54
+    }
+    ```
+
 7. Render the answer to the page including the numbers ex: **1 + 1 + 1 = 3**
-8. Done! That was a lot of fetch calls good work 🎉
+8. Done! That was a lot of fetch calls good work 🎉 
+
+*if you have trouble with https/http endpoint try http
